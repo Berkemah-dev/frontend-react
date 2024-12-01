@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Agrowisata</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        body {
+            min-height: 100vh;
+        }
+
+        /* Gradient button */
+        .gradient-button {
+            background: linear-gradient(to bottom right, #d4fc79, #96e6a1);
+            color: white;
+        }
+
+        .gradient-button:hover {
+            background: linear-gradient(to bottom right, #96e6a1, #d4fc79);
+        }
+
+        .google-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .google-icon {
+            width: 24px;
+            height: 24px;
+            margin-right: 8px;
+        }
+    </style>
+
+</head>
+
+<body class="bg-gray-100 min-h-screen flex flex-col items-center justify-center">
+    <!-- Logo -->
+    <div class="mb-4 text-center">
+        <img src="../asset/logo/logo.png" alt="Agrowisata Logo" class="mx-auto h-20 sm:h-20 md:h-32">
+    </div>
+
+    <!-- Register Form -->
+    <div class="bg-white shadow-lg rounded-2xl px-6 sm:px-8 md:px-5 py-8 w-full max-w-lg">
+        <form>
+            <!-- Nama Lengkap -->
+            <div class="mb-4">
+                <label class="block text-gray-600 font-medium text-sm mb-2" for="nama">Nama Lengkap</label>
+                <input type="text" id="nama" placeholder="Nama Lengkap"
+                    class="w-full px-4 py-3 border border-gray-300 rounded-full focus:ring focus:ring-green-300 focus:outline-none">
+            </div>
+            <!-- Email -->
+            <div class="mb-4">
+                <label class="block text-gray-600 font-medium text-sm mb-2" for="email">Email</label>
+                <input type="email" id="email" placeholder="Email"
+                    class="w-full px-4 py-3 border border-gray-300 rounded-full focus:ring focus:ring-green-300 focus:outline-none">
+            </div>
+            <!-- Password -->
+            <div class="mb-4">
+                <label class="block text-gray-600 font-medium text-sm mb-2" for="password">Password</label>
+                <input type="password" id="password" placeholder="Password"
+                    class="w-full px-4 py-3 border border-gray-300 rounded-full focus:ring focus:ring-green-300 focus:outline-none">
+            </div>
+            <!-- Konfirmasi Password -->
+            <div class="mb-4">
+                <label class="block text-gray-600 font-medium text-sm mb-2" for="confirm-password">Konfirmasi
+                    Password</label>
+                <input type="password" id="confirm-password" placeholder="Konfirmasi Password"
+                    class="w-full px-4 py-3 border border-gray-300 rounded-full focus:ring focus:ring-green-300 focus:outline-none">
+            </div>
+            <!-- Checkbox -->
+            <div class="mb-6 flex items-start">
+                <input type="checkbox" id="terms" class="mr-2 mt-1">
+                <label for="terms" class="text-gray-600 text-sm">Dengan mendaftar, Anda menerima ketentuan penggunaan
+                    dan kebijakan privasi kami.</label>
+            </div>
+            <!-- Sign Up Button -->
+            <div class="flex justify-center">
+                <button type="submit"
+                    class="bg-[#6B9C89] hover:bg-[#4f7f66] text-white font-semibold py-2 px-6 rounded-full transition duration-200 w-full sm:w-auto">
+                    Sign Up
+                </button>
+            </div>
+
+        </form>
+
+        <!-- Divider -->
+        <div class="my-6 flex items-center">
+            <div class="flex-grow border-t border-gray-300"></div>
+            <span class="mx-4 text-sm text-gray-500">Or</span>
+            <div class="flex-grow border-t border-gray-300"></div>
+        </div>
+
+        <!-- Google Button -->
+        <button
+            class="google-button bg-gray-100 text-gray-700 font-semibold py-2 px-4 rounded-full w-full hover:bg-gray-200">
+            <img src="../asset/icon/google_icon.webp" alt="Google Icon" class="google-icon"> Lanjutkan Menggunakan
+            Google
+        </button>
+
+        <!-- Login Link -->
+        <p class="text-sm text-gray-500 text-center mt-6">
+            Already have an account? <a href="login.html" class="text-green-500 hover:underline font-semibold">Log
+                in</a>
+        </p>
+    </div>
+</body>
+
+</html>

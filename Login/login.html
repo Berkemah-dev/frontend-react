@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Agrowisata</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        body {
+            padding-top: 0px;
+            /* Menaikkan posisi elemen ke atas */
+            min-height: 100vh;
+        }
+
+        /* Gradient button */
+        .gradient-button {
+            background: linear-gradient(to bottom right, #d4fc79, #96e6a1);
+            color: white;
+        }
+
+        .gradient-button:hover {
+            background: linear-gradient(to bottom right, #96e6a1, #d4fc79);
+        }
+    </style>
+
+</head>
+
+<body class="bg-gray-100 min-h-screen flex flex-col items-center justify-center">
+    <!-- Logo -->
+    <div class="mb-4 text-center"> <!-- Mengurangi margin bawah menjadi mb-4 -->
+        <img src="../asset/logo/logo.png" alt="Agrowisata Logo" class="mx-auto h-20 sm:h-20 md:h-32">
+    </div>
+
+    <!-- Login Form -->
+    <div class="bg-white shadow-lg rounded-2xl px-6 sm:px-8 md:px-5 py-8 w-full max-w-lg sm:max-w-md md:max-w-lg">
+        <h2 class="text-2xl font-bold text-gray-700 mb-4">Login</h2> <!-- Mengurangi margin bawah di judul -->
+        <form>
+            <!-- Email -->
+            <div class="mb-4">
+                <label class="block text-gray-600 font-medium text-sm mb-2" for="email">Email</label>
+                <input type="email" id="email" placeholder="Email"
+                    class="w-full px-4 py-3 border border-gray-300 rounded-full focus:ring focus:ring-green-300 focus:outline-none">
+            </div>
+            <!-- Password -->
+            <div class="mb-6">
+                <label class="block text-gray-600 font-medium text-sm mb-2" for="password">Password</label>
+                <input type="password" id="password" placeholder="Password"
+                    class="w-full px-4 py-3 border border-gray-300 rounded-full focus:ring focus:ring-green-300 focus:outline-none">
+            </div>
+        </form>
+        <!-- Footer -->
+        <div class="flex flex-col sm:flex-row items-center justify-between mt-6 space-y-4 sm:space-y-0 sm:space-x-4">
+            <p class="text-sm text-gray-500 text-center sm:text-left">
+                Daftar jika belum punya akun? <a href="register.html"
+                    class="text-green-500 hover:underline font-semibold">Daftar</a>
+            </p>
+            <button type="submit"
+                class="bg-[#6B9C89] hover:bg-[#4f7f66] text-[#FFFFFF] font-semibold py-2 px-6 rounded-full transition duration-200 w-full sm:w-auto">
+                Masuk
+            </button>
+        </div>
+    </div>
+</body>
+
+</html>
