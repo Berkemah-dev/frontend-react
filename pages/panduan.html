@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panduan Booking</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .step-number {
+            background-color: #6B9C89;
+            color: white;
+            font-size: 1.25rem;
+            width: 3rem;
+            height: 3rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 9999px;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50">
+
+    <!-- Navbar -->
+    <nav class="bg-[#6B9C89] text-white px-6 py-4 shadow-md">
+        <div class="container mx-auto flex items-center justify-between">
+            <!-- Logo and Menu Items Group -->
+            <div class="flex items-center space-x-4">
+                <!-- Logo -->
+                <img src="../asset/logo/logo.png" alt="Logo" class="h-8">
+
+                <!-- Hamburger Menu -->
+                <button id="menu-btn" class="block md:hidden text-white focus:outline-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16m-7 6h7" />
+                    </svg>
+                </button>
+
+                <!-- Menu Items -->
+                <ul id="menu" class="hidden md:flex space-x-4 text-sm font-medium">
+                    <li>
+                        <a href="beranda.html"
+                            class="hover:text-gray-200 border-b-2 border-transparent hover:border-white">
+                            Beranda
+                        </a>
+                    </li>
+                    <li>
+                        <a href="destinasi.html"
+                            class="hover:text-gray-200 border-b-2 border-transparent hover:border-white">
+                            Destinasi Wisata
+                        </a>
+                    </li>
+                    <li>
+                        <a href="panduan.html"
+                            class="hover:text-gray-200 border-b-2 border-transparent hover:border-white">
+                            Panduan Booking
+                        </a>
+                    </li>
+                    <li>
+                        <a href="cekkuota.html"
+                            class="hover:text-gray-200 border-b-2 border-transparent hover:border-white">
+                            Cek Kuota
+                        </a>
+                    </li>
+                    <li>
+                        <a href="berita.html"
+                            class="hover:text-gray-200 border-b-2 border-transparent hover:border-white">
+                            Berita
+                        </a>
+                    </li>
+                    <li>
+                        <a href="penginapan.html"
+                            class="hover:text-gray-200 border-b-2 border-transparent hover:border-white">
+                            Penginapan
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Buttons -->
+            <div id="buttons" class="hidden md:flex space-x-4">
+                <a href="../Login/register.html"
+                    class="bg-white text-[#6B9C89] px-4 py-2 rounded font-medium hover:bg-[#6B9C89] hover:text-white text-sm">
+                    Registrasi
+                </a>
+                <a href="../Login/login.html"
+                    class="bg-white text-[#6B9C89] px-4 py-2 rounded font-medium hover:bg-[#6B9C89] hover:text-white text-sm">
+                    Login
+                </a>
+            </div>
+        </div>
+
+        <!-- Mobile Dropdown Menu -->
+        <div id="dropdown" class="hidden md:hidden">
+            <ul class="space-y-4 text-center py-4">
+                <li>
+                    <a href="index.html" class="block hover:text-gray-200">Beranda</a>
+                </li>
+                <li>
+                    <a href="destinasi.html" class="block hover:text-gray-200">Destinasi Wisata</a>
+                </li>
+                <li>
+                    <a href="panduan.html" class="block hover:text-gray-200">Panduan Booking</a>
+                </li>
+                <li>
+                    <a href="cekkuota.html" class="block hover:text-gray-200">Cek Kuota</a>
+                </li>
+                <li>
+                    <a href="berita.html" class="block hover:text-gray-200">Berita</a>
+                </li>
+                <li>
+                    <a href="penginapan.html" class="block hover:text-gray-200">Penginapan</a>
+                </li>
+                <li>
+                    <a href="../Login/register.html"
+                        class="block bg-white text-[#6B9C89] px-4 py-2 rounded font-medium">
+                        Registrasi
+                    </a>
+                </li>
+                <li>
+                    <a href="../Login/login.html" class="block bg-white text-[#6B9C89] px-4 py-2 rounded font-medium">
+                        Login
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Panduan Booking Section -->
+    <main class="container mx-auto px-4 py-12">
+        <h1 class="text-4xl font-bold text-center mb-12">Panduan Booking</h1>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Langkah 1 -->
+            <div class="flex space-x-4">
+                <div class="step-number">1</div>
+                <div>
+                    <h2 class="text-xl font-semibold mb-2">Buka Halaman Agrowisata</h2>
+                    <img src="../asset/poto/panduan1.png" alt="Buka Halaman Agrowisata" class="mb-4">
+                    <p class="text-gray-700">
+                        Akses situs resmi Agrowisata Kaligua melalui browser. Di halaman utama, pilih opsi "Destinasi"
+                        untuk melihat pilihan wisata yang tersedia di Kebun Teh Kaligua.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Langkah 2 -->
+            <div class="flex space-x-4">
+                <div class="step-number">2</div>
+                <div>
+                    <h2 class="text-xl font-semibold mb-2">Cek Kuota</h2>
+                    <img src="../asset/poto/panduan2.png" alt="Cek Kuota" class="mb-4">
+                    <p class="text-gray-700">
+                        Sebelum memilih tanggal kunjungan wisata, harap cek ketersediaan kuota terlebih dahulu. Klik
+                        “Cek Kuota” pada bagian atas, lalu sesuaikan jadwal kunjungan Anda dengan kuota yang tersedia.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Langkah 3 -->
+            <div class="flex space-x-4">
+                <div class="step-number">3</div>
+                <div>
+                    <h2 class="text-xl font-semibold mb-2">Registrasi</h2>
+                    <img src="../asset/poto/panduan3.png" alt="Registrasi" class="mb-4">
+                    <p class="text-gray-700">
+                    <ol class="list-decimal pl-5">
+                        <li>Pastikan Anda sudah memiliki akun. Jika belum, silakan lakukan registrasi dengan mengisi
+                            informasi yang diperlukan di halaman pendaftaran.</li>
+                        <li>Setelah berhasil mendaftar, login menggunakan email dan password yang telah didaftarkan.
+                            Anda akan diarahkan ke halaman beranda yang memuat informasi lengkap mengenai Agrowisata
+                            Kaligua.</li>
+                        <li>Setelah login, cek kembali ketersediaan kuota untuk tanggal kunjungan Anda. Jika kuota
+                            tersedia dan tanggal sudah sesuai, klik "Destinasi Wisata" dan isi form pemesanan untuk
+                            melanjutkan proses booking.</li>
+                    </ol>
+                    </p>
+
+                </div>
+            </div>
+
+            <!-- Langkah 4 -->
+            <div class="flex space-x-4">
+                <div class="step-number">4</div>
+                <div>
+                    <h2 class="text-xl font-semibold mb-2">Isi Form Pemesanan</h2>
+                    <img src="../asset/poto/panduan4.png" alt="Isi Form Pemesanan" class="mb-4">
+                    <p class="text-gray-700">
+                    <ol class="list-decimal pl-5">
+                        <li>Pilih destinasi yang ingin dikunjungi di menu Destinasi Wisata.</li>
+                        <li>Isi formulir pemesanan wisata yang tersedia di website.</li>
+                        <li>Baca dan setujui syarat dan ketentuan berwisata di Agrowisata Kaligua, termasuk larangan
+                            membawa barang tertentu dan kesediaan untuk mematuhi peraturan yang berlaku.</li>
+                        <li>Tentukan tanggal kunjungan sesuai kuota yang tersedia. Pastikan semua data yang dimasukkan
+                            sudah benar.</li>
+                        <li>Masukkan jumlah tiket yang diinginkan di form pemesanan. Pilih metode pembayaran sesuai
+                            preferensi Anda, baik melalui Transfer atau QRIS.</li>
+                        <li>Setelah data dan pembayaran selesai, pemesanan tiket Agrowisata Anda telah berhasil
+                            dilakukan secara online.</li>
+                    </ol>
+                    </p>
+
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const dropdown = document.getElementById('dropdown');
+
+        menuBtn.addEventListener('click', () => {
+            dropdown.classList.toggle('hidden');
+        });
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cek Kuota</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Custom styles for button */
+        .datepicker-btn {
+            display: flex;
+            align-items: center;
+            background-color: #6B9C89;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 0.375rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+            font-size: 0.875rem;
+            gap: 0.5rem;
+        }
+
+        .datepicker-btn:hover {
+            background-color: #5a7f6f;
+        }
+
+        .datepicker-btn img {
+            width: 18px;
+            height: 18px;
+        }
+
+        .datepicker-btn svg {
+            margin-right: 0.5rem;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50">
+
+    <!-- Navbar -->
+    <nav class="bg-[#6B9C89] text-white px-6 py-4 shadow-md">
+        <div class="container mx-auto flex items-center justify-between">
+            <!-- Logo and Menu Items Group -->
+            <div class="flex items-center space-x-4">
+                <!-- Logo -->
+                <img src="../asset/logo/logo.png" alt="Logo" class="h-8">
+
+                <!-- Hamburger Menu -->
+                <button id="menu-btn" class="block md:hidden text-white focus:outline-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16m-7 6h7" />
+                    </svg>
+                </button>
+
+                <!-- Menu Items -->
+                <ul id="menu" class="hidden md:flex space-x-4 text-sm font-medium">
+                    <li>
+                        <a href="beranda.html"
+                            class="hover:text-gray-200 border-b-2 border-transparent hover:border-white">
+                            Beranda
+                        </a>
+                    </li>
+                    <li>
+                        <a href="destinasi.html"
+                            class="hover:text-gray-200 border-b-2 border-transparent hover:border-white">
+                            Destinasi Wisata
+                        </a>
+                    </li>
+                    <li>
+                        <a href="panduan.html"
+                            class="hover:text-gray-200 border-b-2 border-transparent hover:border-white">
+                            Panduan Booking
+                        </a>
+                    </li>
+                    <li>
+                        <a href="cekkuota.html"
+                            class="hover:text-gray-200 border-b-2 border-transparent hover:border-white">
+                            Cek Kuota
+                        </a>
+                    </li>
+                    <li>
+                        <a href="berita.html"
+                            class="hover:text-gray-200 border-b-2 border-transparent hover:border-white">
+                            Berita
+                        </a>
+                    </li>
+                    <li>
+                        <a href="penginapan.html"
+                            class="hover:text-gray-200 border-b-2 border-transparent hover:border-white">
+                            Penginapan
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Buttons -->
+            <div id="buttons" class="hidden md:flex space-x-4">
+                <a href="../Login/register.html"
+                    class="bg-white text-[#6B9C89] px-4 py-2 rounded font-medium hover:bg-[#6B9C89] hover:text-white text-sm">
+                    Registrasi
+                </a>
+                <a href="../Login/login.html"
+                    class="bg-white text-[#6B9C89] px-4 py-2 rounded font-medium hover:bg-[#6B9C89] hover:text-white text-sm">
+                    Login
+                </a>
+            </div>
+        </div>
+
+        <!-- Mobile Dropdown Menu -->
+        <div id="dropdown" class="hidden md:hidden">
+            <ul class="space-y-4 text-center py-4">
+                <li>
+                    <a href="index.html" class="block hover:text-gray-200">Beranda</a>
+                </li>
+                <li>
+                    <a href="destinasi.html" class="block hover:text-gray-200">Destinasi Wisata</a>
+                </li>
+                <li>
+                    <a href="panduan.html" class="block hover:text-gray-200">Panduan Booking</a>
+                </li>
+                <li>
+                    <a href="cekkuota.html" class="block hover:text-gray-200">Cek Kuota</a>
+                </li>
+                <li>
+                    <a href="berita.html" class="block hover:text-gray-200">Berita</a>
+                </li>
+                <li>
+                    <a href="penginapan.html" class="block hover:text-gray-200">Penginapan</a>
+                </li>
+                <li>
+                    <a href="../Login/register.html"
+                        class="block bg-white text-[#6B9C89] px-4 py-2 rounded font-medium">
+                        Registrasi
+                    </a>
+                </li>
+                <li>
+                    <a href="../Login/login.html" class="block bg-white text-[#6B9C89] px-4 py-2 rounded font-medium">
+                        Login
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Section -->
+    <div class="container mx-auto p-4 md:p-8">
+        <h1 class="text-2xl md:text-3xl font-semibold text-center mb-6">Cek Kuota</h1>
+
+        <!-- Date Picker Button -->
+        <div class="flex justify-start mb-6">
+            <button id="openCalendar" class="datepicker-btn">
+                Pilih Tanggal
+                <img src="https://img.icons8.com/ios/50/ffffff/calendar.png" alt="Calendar Icon" />
+            </button>
+            <input type="date" id="datePicker" class="hidden">
+        </div>
+
+        <!-- Table -->
+        <div class="overflow-x-auto bg-white shadow-lg rounded-lg">
+            <table class="min-w-full table-auto text-center">
+                <thead class="bg-[#6B9C89] text-white">
+                    <tr>
+                        <th class="py-3 px-2 md:px-4">Tanggal</th>
+                        <th class="py-3 px-2 md:px-4">Destinasi Kunjungan Wisata</th>
+                        <th class="py-3 px-2 md:px-4">Kuota</th>
+                        <th class="py-3 px-2 md:px-4">Sisa Kuota</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="border-t">
+                        <td class="py-3 px-2 md:px-4">1-10-2024</td>
+                        <td class="py-3 px-2 md:px-4">Kaligua</td>
+                        <td class="py-3 px-2 md:px-4">20</td>
+                        <td class="py-3 px-2 md:px-4">80</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        const datePicker = document.getElementById('datePicker');
+        const openCalendarButton = document.getElementById('openCalendar');
+
+        openCalendarButton.addEventListener('click', function () {
+            datePicker.showPicker(); // Show the native date picker dialog
+        });
+
+        const menuBtn = document.getElementById('menu-btn');
+        const dropdown = document.getElementById('dropdown');
+
+        menuBtn.addEventListener('click', () => {
+            dropdown.classList.toggle('hidden');
+        });
+    </script>
+
+</body>
+
+</html>

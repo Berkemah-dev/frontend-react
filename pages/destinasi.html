@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destinasi Wisata</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .destination_area h2 {
+            color: #333;
+        }
+
+        .destination_area p {
+            color: #575757;
+        }
+
+        .destination_area .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .destination_area img {
+            transition: transform 0.3s;
+        }
+
+        .destination_area img:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50">
+
+    <!-- Navbar -->
+    <nav class="bg-[#6B9C89] text-white px-6 py-4 shadow-md">
+        <div class="container mx-auto flex items-center justify-between">
+            <!-- Logo and Menu Items Group -->
+            <div class="flex items-center space-x-4">
+                <!-- Logo -->
+                <img src="../asset/logo/logo.png" alt="Logo" class="h-8">
+
+                <!-- Hamburger Menu -->
+                <button id="menu-btn" class="block md:hidden text-white focus:outline-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16m-7 6h7" />
+                    </svg>
+                </button>
+
+                <!-- Menu Items -->
+                <ul id="menu" class="hidden md:flex space-x-4 text-sm font-medium">
+                    <li>
+                        <a href="beranda.html"
+                            class="hover:text-gray-200 border-b-2 border-transparent hover:border-white">
+                            Beranda
+                        </a>
+                    </li>
+                    <li>
+                        <a href="destinasi.html"
+                            class="hover:text-gray-200 border-b-2 border-transparent hover:border-white">
+                            Destinasi Wisata
+                        </a>
+                    </li>
+                    <li>
+                        <a href="panduan.html"
+                            class="hover:text-gray-200 border-b-2 border-transparent hover:border-white">
+                            Panduan Booking
+                        </a>
+                    </li>
+                    <li>
+                        <a href="cekkuota.html"
+                            class="hover:text-gray-200 border-b-2 border-transparent hover:border-white">
+                            Cek Kuota
+                        </a>
+                    </li>
+                    <li>
+                        <a href="berita.html"
+                            class="hover:text-gray-200 border-b-2 border-transparent hover:border-white">
+                            Berita
+                        </a>
+                    </li>
+                    <li>
+                        <a href="penginapan.html"
+                            class="hover:text-gray-200 border-b-2 border-transparent hover:border-white">
+                            Penginapan
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Buttons -->
+            <div id="buttons" class="hidden md:flex space-x-4">
+                <a href="../Login/register.html"
+                    class="bg-white text-[#6B9C89] px-4 py-2 rounded font-medium hover:bg-[#6B9C89] hover:text-white text-sm">
+                    Registrasi
+                </a>
+                <a href="../Login/login.html"
+                    class="bg-white text-[#6B9C89] px-4 py-2 rounded font-medium hover:bg-[#6B9C89] hover:text-white text-sm">
+                    Login
+                </a>
+            </div>
+        </div>
+
+        <!-- Mobile Dropdown Menu -->
+        <div id="dropdown" class="hidden md:hidden">
+            <ul class="space-y-4 text-center py-4">
+                <li>
+                    <a href="index.html" class="block hover:text-gray-200">Beranda</a>
+                </li>
+                <li>
+                    <a href="destinasi.html" class="block hover:text-gray-200">Destinasi Wisata</a>
+                </li>
+                <li>
+                    <a href="panduan.html" class="block hover:text-gray-200">Panduan Booking</a>
+                </li>
+                <li>
+                    <a href="cekkuota.html" class="block hover:text-gray-200">Cek Kuota</a>
+                </li>
+                <li>
+                    <a href="berita.html" class="block hover:text-gray-200">Berita</a>
+                </li>
+                <li>
+                    <a href="penginapan.html" class="block hover:text-gray-200">Penginapan</a>
+                </li>
+                <li>
+                    <a href="../Login/register.html"
+                        class="block bg-white text-[#6B9C89] px-4 py-2 rounded font-medium">
+                        Registrasi
+                    </a>
+                </li>
+                <li>
+                    <a href="../Login/login.html" class="block bg-white text-[#6B9C89] px-4 py-2 rounded font-medium">
+                        Login
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <div class="container mx-auto px-4 pt-12">
+        <div class="text-center mb-8">
+            <h2 class="text-3xl font-semibold">Destinasi Wisata</h2>
+        </div>
+
+        <!-- Destinasi 1 -->
+        <div class="flex flex-col md:flex-row items-center mb-8 bg-white shadow-md rounded-lg overflow-hidden">
+            <img src="../asset/poto/kaligua.png" alt="Kaligua"
+                class="destination-img w-full md:w-1/2 h-64 md:h-auto object-cover">
+            <div class="p-6 md:w-1/2">
+                <h3 class="text-xl font-semibold mb-2">Kaligua</h3>
+                <p class="text-gray-700 text-sm">
+                    Kaligua adalah destinasi agrowisata di lereng Gunung Slamet yang menawarkan suasana sejuk,
+                    hamparan kebun teh yang luas, dan berbagai aktivitas seperti trekking dan tea walk. Cocok untuk
+                    relaksasi dan healing.
+                </p>
+            </div>
+        </div>
+
+        <!-- Destinasi 2 -->
+        <div class="flex flex-col md:flex-row-reverse items-center mb-8 bg-white shadow-md rounded-lg overflow-hidden">
+            <img src="../asset/poto/puncaksakub.png" alt="Puncak Sakub"
+                class="destination-img w-full md:w-1/2 h-64 md:h-auto object-cover">
+            <div class=" p-6 md:w-1/2">
+                <h3 class="text-xl font-semibold mb-2">Puncak Sakub</h3>
+                <p class="text-gray-700 text-sm">
+                    Puncak Sakub menawarkan pemandangan menakjubkan dari ketinggian 1.900 meter di atas permukaan
+                    laut, dengan hamparan kebun teh hijau dan lembah-lembah yang indah.
+                </p>
+            </div>
+        </div>
+
+        <!-- Destinasi 3 -->
+        <div class="flex flex-col md:flex-row items-center mb-8 bg-white shadow-md rounded-lg overflow-hidden">
+            <img src="img/gurun_teh.jpg" alt="Gurun Teh" class="w-full md:w-1/2 h-64 object-cover">
+            <div class="p-6 md:w-1/2">
+                <h3 class="text-xl font-semibold mb-2">Gurun Teh</h3>
+                <p class="text-gray-700 text-sm">
+                    Gurun Teh adalah hamparan luas kebun teh yang menyerupai padang hijau tak berujung, menawarkan
+                    suasana menenangkan dengan udara sejuk dan pemandangan yang mempesona.
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const dropdown = document.getElementById('dropdown');
+
+        menuBtn.addEventListener('click', () => {
+            dropdown.classList.toggle('hidden');
+        });
+
+    </script>
+</body>
+
+</html>
