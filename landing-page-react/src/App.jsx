@@ -45,9 +45,9 @@ const Home = () => {
   return (
     <>
       <Navbar />
-      <BookingGuide />
-      <Destinations />
       <HeroSection />
+      <Destinations />
+      <BookingGuide />
     </>
   );
 };

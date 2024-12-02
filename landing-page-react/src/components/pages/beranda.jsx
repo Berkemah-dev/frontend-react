@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
+import logo from '../../assets/logo/logo.jpg';  // Path relatif sesuai struktur proyek
+import group1 from '../../assets/poto/Group 1.png';  // Gambar lainnya dari src
 
 const Beranda = () => {
-  // State untuk toggle menu mobile
+  // State for toggling mobile menu
   const [dropdownVisible, setDropdownVisible] = useState(false);
 
   // Toggle dropdown menu
@@ -14,52 +16,34 @@ const Beranda = () => {
       {/* Navbar */}
       <nav className="bg-[#6B9C89] text-white px-6 py-4 shadow-md">
         <div className="container mx-auto flex items-center justify-between">
-          {/* Logo & Menu Items */}
+          {/* Logo */}
           <div className="flex items-center space-x-4">
-            <img src="../asset/logo/logo.png" alt="Logo" className="h-8" />
-            <button
-              onClick={toggleDropdown}
-              className="block md:hidden text-white focus:outline-none"
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7" />
-              </svg>
-            </button>
-            {/* Menu for Desktop */}
-            <ul className="hidden md:flex space-x-4 text-sm font-medium">
-              <li><a href="beranda.html" className="hover:text-gray-200 border-b-2 border-transparent hover:border-white">Beranda</a></li>
-              <li><a href="destinasi.html" className="hover:text-gray-200 border-b-2 border-transparent hover:border-white">Destinasi Wisata</a></li>
-              <li><a href="panduan.html" className="hover:text-gray-200 border-b-2 border-transparent hover:border-white">Panduan Booking</a></li>
-              <li><a href="cekkuota.html" className="hover:text-gray-200 border-b-2 border-transparent hover:border-white">Cek Kuota</a></li>
-              <li><a href="berita.html" className="hover:text-gray-200 border-b-2 border-transparent hover:border-white">Berita</a></li>
-              <li><a href="penginapan.html" className="hover:text-gray-200 border-b-2 border-transparent hover:border-white">Penginapan</a></li>
-            </ul>
+            <img src={logo} alt="Logo" className="h-8" />
           </div>
         </div>
       </nav>
 
-      {/* Dropdown Menu (Mobile) */}
-      <div className={`md:hidden ${dropdownVisible ? 'block' : 'hidden'}`}>
-        <ul className="space-y-4 text-center py-4">
-          <li><a href="beranda.html" className="block hover:text-gray-200">Beranda</a></li>
-          <li><a href="destinasi.html" className="block hover:text-gray-200">Destinasi Wisata</a></li>
-          <li><a href="panduan.html" className="block hover:text-gray-200">Panduan Booking</a></li>
-          <li><a href="cekkuota.html" className="block hover:text-gray-200">Cek Kuota</a></li>
-          <li><a href="berita.html" className="block hover:text-gray-200">Berita</a></li>
-          <li><a href="penginapan.html" className="block hover:text-gray-200">Penginapan</a></li>
-        </ul>
-      </div>
-
-      {/* Main Section */}
-      <main className="container mx-auto py-10 text-center">
-        <h1 className="text-3xl font-bold text-gray-700 mb-6">Perubahan Operasional</h1>
-        <div className="mb-8">
-          <img src="../asset/icon/acarafestival.png" alt="Icon ceklis" className="w-72 mx-auto" />
-        </div>
-        <p className="text-gray-600 text-base">
-          Perubahan operasional hanya sewaktu-waktu dan tidak selalu ter-update pada halaman ini.
+      {/* Hero Section */}
+      <section className="bg-white py-12 px-6 text-center">
+        <h1 className="text-2xl md:text-4xl font-semibold text-gray-800">Agro Wisata Kaligua</h1>
+        <p className="mt-4 text-justify">
+          Agro wisata Kaligua adalah destinasi wisata berbasis pertanian yang terletak di daerah perbukitan,
+          menawarkan pengalaman rekreasi sekaligus edukasi seputar perkebunan teh dan agroekosistem.
         </p>
-      </main>
+      </section>
+
+      {/* Destinasi Section */}
+      <section className="bg-gray-50 py-12 px-6">
+        <div className="container mx-auto text-center">
+          <h2 className="text-3xl font-bold text-gray-800 mb-6">Destinasi</h2>
+          <div className="flex space-x-6 overflow-x-auto snap-x snap-mandatory scroll-smooth">
+            <div className="flex-shrink-0 w-[400px] h-[250px] relative rounded-lg overflow-hidden snap-start">
+              <img src={group1} alt="Gurun Teh" className="w-full h-full object-cover" />
+              <div className="absolute bottom-0 left-0 bg-black bg-opacity-10 w-full text-white py-3 pl-3 text-lg">Gurun Teh</div>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 };

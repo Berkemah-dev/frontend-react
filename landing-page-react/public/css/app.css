@@ -1,0 +1,12 @@
+/* Cek penggunaan flex-direction pada container */
+.container {
+    display: flex;
+    flex-direction: row; /* Pastikan ini untuk urutan normal (horizontal) */
+  }
+  
+  /* Atau, untuk menghindari urutan terbalik pada menu dropdown */
+  .menu {
+    display: flex;
+    flex-direction: column; /* Pastikan urutan elemen tidak berubah (vertikal) */
+  }
+  
