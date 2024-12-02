@@ -16,6 +16,7 @@ import KonfirTiketBerhasil from './components/pages/konfir_tiket_berhasil';
 import KonfirmasiTiket from './components/pages/konfirmasi_tiket';
 import Panduan from './components/pages/panduan';
 import Penginapan from './components/pages/penginapan';
+import Admin from './components/pages/admin';
 const App = () => {
   return (
     <Router>
@@ -29,9 +30,10 @@ const App = () => {
         <Route path="/berita" element={<Berita />} />
         <Route path="/cekkuota" element={<CekKuota />} />
         <Route path="/destinasi" element={<Destinasi />} />
-        <Route path="/konfirmasitiket" element={<KonfirTiketBerhasil />} />
+        <Route path="/konfirmasitiketberhasil" element={<KonfirTiketBerhasil />} />
         <Route path="/konfirmasitiket" element={<KonfirmasiTiket />} />
         <Route path="/panduan" element={<Panduan />} />
+        <Route path="/admin" element={<Admin />} />
 
         <Route path="/penginapan" element={<Penginapan />} />
 

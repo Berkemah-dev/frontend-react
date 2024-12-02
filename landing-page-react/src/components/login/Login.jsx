@@ -5,7 +5,7 @@ const Login = () => {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
 
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
 
     // Validasi login (bisa ditambahkan sesuai kebutuhan)
@@ -14,13 +14,39 @@ const Login = () => {
       return;
     }
 
-    // Simulasi proses login (bisa diganti dengan API nyata)
-    console.log('Email:', email);
-    console.log('Password:', password);
+    try {
+      // Kirim data login ke API
+      const response = await fetch('http://localhost:5000/api/auth/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email, password }),
+      });
 
-    // Redirect atau aksi setelah login sukses
-    // (misalnya menggunakan React Router atau menyimpan data di localStorage)
-    alert('Login berhasil!');
+      const data = await response.json();
+console.log(data)
+      if (!response.ok) {
+        throw new Error(data.message || 'Login gagal!');
+      }
+
+      // Simpan token atau data user jika perlu
+      localStorage.setItem('token', data.token); // Asumsi API mengembalikan token
+
+      // Cek apakah user adalah admin
+      if (data.role === 'admin') {
+        // Redirect ke halaman admin jika admin
+        window.location.href = '/';  // Ganti dengan routing yang sesuai
+      } else {
+        // Redirect ke halaman pengguna biasa
+        window.location.href = '/admin'; // Ganti dengan routing yang sesuai
+      }
+      console.log(data.role)
+
+      alert('Login berhasil!');
+    } catch (error) {
+      setError(error.message);
+    }
   };
 
   return (
