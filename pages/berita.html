@@ -11,6 +11,59 @@
         body {
             font-family: 'Poppins', sans-serif;
         }
+
+        /* Styling Footer untuk membuatnya lebih rapi */
+        footer {
+            background-color: #6B9C89;
+            color: white;
+        }
+
+        .footer-links ul {
+            padding-left: 0;
+            list-style: none;
+            text-align: center;
+        }
+
+        .footer-links a {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        /* Styling untuk konten */
+        section {
+            margin-top: 30px;
+            padding-top: 30px;
+        }
+
+        .section-heading {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #333;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .content p {
+            text-align: justify;
+            margin-bottom: 20px;
+            font-size: 1rem;
+            color: #555;
+        }
+
+        /* Button section */
+        .btn {
+            background-color: #6B9C89;
+            color: white;
+            padding: 16px 24px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            border-radius: 12px;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #558971;
+        }
     </style>
 </head>
 
@@ -21,7 +74,6 @@
         <div class="container mx-auto flex items-center justify-between">
             <!-- Logo and Menu Items Group -->
             <div class="flex items-center space-x-4">
-                <!-- Logo -->
                 <img src="../asset/logo/logo.png" alt="Logo" class="h-8">
 
                 <!-- Hamburger Menu -->
@@ -37,199 +89,170 @@
                 <ul id="menu" class="hidden md:flex space-x-4 text-sm font-medium">
                     <li>
                         <a href="beranda.html"
-                            class="hover:text-gray-200 border-b-2 border-transparent hover:border-white">
-                            Beranda
-                        </a>
+                            class="hover:text-gray-200 border-b-2 border-transparent hover:border-white">Beranda</a>
                     </li>
                     <li>
                         <a href="destinasi.html"
-                            class="hover:text-gray-200 border-b-2 border-transparent hover:border-white">
-                            Destinasi Wisata
-                        </a>
+                            class="hover:text-gray-200 border-b-2 border-transparent hover:border-white">Destinasi
+                            Wisata</a>
                     </li>
                     <li>
                         <a href="panduan.html"
-                            class="hover:text-gray-200 border-b-2 border-transparent hover:border-white">
-                            Panduan Booking
-                        </a>
+                            class="hover:text-gray-200 border-b-2 border-transparent hover:border-white">Panduan
+                            Booking</a>
                     </li>
                     <li>
                         <a href="cekkuota.html"
-                            class="hover:text-gray-200 border-b-2 border-transparent hover:border-white">
-                            Cek Kuota
-                        </a>
+                            class="hover:text-gray-200 border-b-2 border-transparent hover:border-white">Cek Kuota</a>
                     </li>
                     <li>
                         <a href="berita.html"
-                            class="hover:text-gray-200 border-b-2 border-transparent hover:border-white">
-                            Berita
-                        </a>
+                            class="hover:text-gray-200 border-b-2 border-transparent hover:border-white">Berita</a>
                     </li>
                     <li>
                         <a href="penginapan.html"
-                            class="hover:text-gray-200 border-b-2 border-transparent hover:border-white">
-                            Penginapan
-                        </a>
+                            class="hover:text-gray-200 border-b-2 border-transparent hover:border-white">Penginapan</a>
                     </li>
                 </ul>
             </div>
 
-            <!-- Buttons -->
-            <div id="buttons" class="hidden md:flex space-x-4">
-                <a href="../Login/register.html"
-                    class="bg-white text-[#6B9C89] px-4 py-2 rounded font-medium hover:bg-[#6B9C89] hover:text-white text-sm">
-                    Registrasi
-                </a>
-                <a href="../Login/login.html"
-                    class="bg-white text-[#6B9C89] px-4 py-2 rounded font-medium hover:bg-[#6B9C89] hover:text-white text-sm">
-                    Login
-                </a>
-            </div>
         </div>
 
         <!-- Mobile Dropdown Menu -->
         <div id="dropdown" class="hidden md:hidden">
             <ul class="space-y-4 text-center py-4">
-                <li>
-                    <a href="index.html" class="block hover:text-gray-200">Beranda</a>
-                </li>
-                <li>
-                    <a href="destinasi.html" class="block hover:text-gray-200">Destinasi Wisata</a>
-                </li>
-                <li>
-                    <a href="panduan.html" class="block hover:text-gray-200">Panduan Booking</a>
-                </li>
-                <li>
-                    <a href="cekkuota.html" class="block hover:text-gray-200">Cek Kuota</a>
-                </li>
-                <li>
-                    <a href="berita.html" class="block hover:text-gray-200">Berita</a>
-                </li>
-                <li>
-                    <a href="penginapan.html" class="block hover:text-gray-200">Penginapan</a>
-                </li>
-                <li>
-                    <a href="../Login/register.html"
-                        class="block bg-white text-[#6B9C89] px-4 py-2 rounded font-medium">
-                        Registrasi
-                    </a>
-                </li>
-                <li>
-                    <a href="../Login/login.html" class="block bg-white text-[#6B9C89] px-4 py-2 rounded font-medium">
-                        Login
-                    </a>
-                </li>
+                <li><a href="index.html" class="block hover:text-gray-200">Beranda</a></li>
+                <li><a href="destinasi.html" class="block hover:text-gray-200">Destinasi Wisata</a></li>
+                <li><a href="panduan.html" class="block hover:text-gray-200">Panduan Booking</a></li>
+                <li><a href="cekkuota.html" class="block hover:text-gray-200">Cek Kuota</a></li>
+                <li><a href="berita.html" class="block hover:text-gray-200">Berita</a></li>
+                <li><a href="penginapan.html" class="block hover:text-gray-200">Penginapan</a></li>
             </ul>
         </div>
     </nav>
 
+    <!-- Main Content -->
     <section class="container mx-auto px-6 py-8">
-        <h1 class="text-3xl font-bold text-gray-800 mb-8 text-center">Agro Wisata Kaligua</h1><br><br>
-        <h1 class="text-3xl font-bold text-gray-800 mb-8 text-center">Informasi Seputar Kaligua</h1>
+        <h1 class="section-heading">Agro Wisata Kaligua</h1>
+        <h1 class="section-heading">Informasi Seputar Kaligua</h1>
 
-        <div class="space-y-6">
-            <p class="text-justify text-gray-700 mb-6">
-                <strong>Agro Wisata Kaligua</strong> adalah salah satu destinasi wisata alam yang menawarkan keindahan
+        <div class="content">
+            <p><strong>Agro Wisata Kaligua</strong> adalah salah satu destinasi wisata alam yang menawarkan keindahan
                 perkebunan teh, pesona pegunungan, serta pengalaman edukasi seputar pertanian. Terletak di lereng Gunung
                 Slamet, Kabupaten Brebes, Jawa Tengah, Kaligua menjadi tempat yang cocok untuk menikmati suasana alam
-                pegunungan yang sejuk serta pemandangan yang hijau memanjakan mata.
-            </p>
+                pegunungan yang sejuk serta pemandangan yang hijau memanjakan mata.</p>
 
-            <p class="text-justify text-gray-700 mb-6">
-                <strong>Sejarah</strong> dan Latar Belakang Perkebunan teh Kaligua didirikan oleh pemerintah kolonial
-                Belanda pada tahun 1889 dan hingga kini masih menjadi salah satu perkebunan teh tertua di Indonesia.
-            </p>
+            <p><strong>Sejarah dan Latar Belakang</strong><br>
+                Perkebunan teh Kaligua didirikan oleh pemerintah kolonial Belanda pada tahun 1889 dan hingga kini masih
+                menjadi salah satu perkebunan teh tertua di Indonesia. Awalnya, perkebunan ini difokuskan pada produksi
+                teh hitam berkualitas ekspor, tetapi seiring berjalannya waktu, potensi wisatanya mulai digarap oleh
+                pengelola dengan mengembangkan konsep agrowisata. Melalui konsep ini, pengunjung tidak hanya bisa
+                menikmati wisata alam, tetapi juga bisa belajar tentang proses produksi teh dari awal hingga siap
+                dipasarkan.</p>
 
-            <p class="text-justify text-gray-700 mb-6">
-                <strong>Awalnya</strong>, perkebunan ini difokuskan pada produksi teh hitam berkualitas ekspor, tetapi
-                seiring berjalannya waktu, potensi wisatanya mulai digarap oleh pengelola dengan mengembangkan konsep
-                agrowisata. Melalui konsep ini, pengunjung tidak hanya bisa menikmati wisata alam, tetapi juga bisa
-                belajar tentang proses produksi teh dari awal hingga siap dipasarkan.
-            </p>
+            <p><strong>Daya Tarik Wisata</strong><br>
+                Salah satu daya tarik utama dari Agro Wisata Kaligua adalah luasnya hamparan perkebunan teh yang
+                menghijau, dengan latar belakang pegunungan yang megah. Pengunjung dapat mengikuti tur ke pabrik
+                pengolahan teh, di mana mereka akan diperlihatkan proses pengolahan daun teh hingga menjadi produk siap
+                jual. Selain itu, tersedia juga area edukasi tentang cara penanaman, perawatan tanaman teh, hingga
+                praktik memetik daun teh yang baik dan benar.</p>
 
-            <p class="text-justify text-gray-700 mb-6">
-                <strong>Daya</strong> Tarik Wisata Salah satu daya tarik utama dari Agro Wisata Kaligua adalah luasnya
-                hamparan perkebunan teh yang menghijau, dengan latar belakang pegunungan yang megah. Pengunjung dapat
-                mengikuti tur ke pabrik pengolahan teh, di mana mereka akan diperlihatkan proses pengolahan daun teh
-                hingga menjadi produk siap jual. Selain itu, tersedia juga area edukasi tentang cara penanaman,
-                perawatan tanaman teh, hingga praktik memetik daun teh yang baik dan benar.
-            </p>
+            <p>Agro Wisata Kaligua juga menawarkan sejumlah spot wisata alam yang menarik. Salah satu yang terkenal
+                adalah Mata Air Tuk Bening, yang merupakan sumber mata air jernih di kawasan ini. Mata air ini dipercaya
+                oleh warga sekitar memiliki khasiat kesehatan, sehingga banyak pengunjung yang tertarik untuk berkunjung
+                dan merasakan air segar langsung dari sumbernya.</p>
 
-            <p class="text-justify text-gray-700 mb-6">
-                <strong>Agro</strong> Wisata Kaligua juga menawarkan sejumlah spot wisata alam yang menarik. Salah satu
-                yang terkenal adalah Mata Air Tuk Bening, yang merupakan sumber mata air jernih di kawasan ini. Mata air
-                ini dipercaya oleh warga sekitar memiliki khasiat kesehatan, sehingga banyak pengunjung yang tertarik
-                untuk berkunjung dan merasakan air segar langsung dari sumbernya.
-            </p>
+            <p>Tidak jauh dari Mata Air Tuk Bening, terdapat Gua Jepang, peninggalan sejarah dari masa penjajahan
+                Jepang. Gua ini dulunya digunakan sebagai tempat persembunyian dan penyimpanan senjata oleh tentara
+                Jepang. Saat ini, gua tersebut menjadi salah satu daya tarik bagi pengunjung yang ingin mengetahui lebih
+                banyak tentang sejarah Kaligua.</p>
 
-            <p class="text-justify text-gray-700 mb-6">
-                <strong>Tidak</strong> jauh dari Mata Air Tuk Bening, terdapat Gua Jepang, peninggalan sejarah dari masa
-                penjajahan Jepang. Gua ini dulunya digunakan sebagai tempat persembunyian dan penyimpanan senjata oleh
-                tentara Jepang. Saat ini, gua tersebut menjadi salah satu daya tarik bagi pengunjung yang ingin
-                mengetahui lebih banyak tentang sejarah Kaligua.
-            </p>
+            <p>Selain itu, bagi para pencinta alam dan petualang, Puncak Sakub menawarkan pengalaman mendaki yang
+                menantang dengan pemandangan spektakuler di puncaknya. Dari ketinggian ini, pengunjung dapat melihat
+                panorama perbukitan, hamparan perkebunan teh, serta jika beruntung, pemandangan laut selatan di
+                kejauhan.</p>
 
-            <p class="text-justify text-gray-700 mb-6">
-                <strong>Selain</strong> itu, bagi para pencinta alam dan petualang, Puncak Sakub menawarkan pengalaman
-                mendaki yang menantang dengan pemandangan spektakuler di puncaknya. Dari ketinggian ini, pengunjung
-                dapat melihat panorama perbukitan, hamparan perkebunan teh, serta jika beruntung, pemandangan laut
-                selatan di kejauhan.
-            </p>
+            <p><strong>Fasilitas yang Tersedia</strong><br>
+                Agro Wisata Kaligua telah dilengkapi dengan fasilitas yang cukup memadai. Di area ini, terdapat
+                penginapan dengan konsep rumah teh, yang memungkinkan pengunjung merasakan suasana pedesaan dan tenang.
+                Restoran yang ada di kawasan ini juga menawarkan makanan khas Brebes serta minuman teh khas Kaligua yang
+                bisa dinikmati langsung di tengah perkebunan. Selain itu, tersedia tempat parkir yang luas, area bermain
+                anak, serta toko oleh-oleh yang menjual berbagai produk teh dan kerajinan lokal.</p>
 
-            <p class="text-justify text-gray-700 mb-6">
-                <strong>Fasilitas</strong> yang Tersedia Agro Wisata Kaligua telah dilengkapi dengan fasilitas yang
-                cukup memadai. Di area ini, terdapat penginapan dengan konsep rumah teh, yang memungkinkan pengunjung
-                merasakan suasana pedesaan dan tenang. Restoran yang ada di kawasan ini juga menawarkan makanan khas
-                Brebes serta minuman teh khas Kaligua yang bisa dinikmati langsung di tengah perkebunan. Selain itu,
-                tersedia tempat parkir yang luas, area bermain anak, serta toko oleh-oleh yang menjual berbagai produk
-                teh dan kerajinan lokal.
-            </p>
+            <p><strong>Aktivitas Wisata</strong><br>
+                Beragam aktivitas bisa dilakukan di Agro Wisata Kaligua, mulai dari berkeliling perkebunan dengan tea
+                walk, bersepeda mengelilingi area perkebunan, hingga menikmati outbound dan camping. Wisata edukasi juga
+                menjadi kegiatan yang banyak digemari oleh wisatawan, terutama bagi anak-anak dan keluarga. Dalam
+                program wisata edukasi ini, pengunjung bisa belajar langsung dari petani dan pengelola perkebunan
+                tentang teknik bercocok tanam yang ramah lingkungan serta pengelolaan perkebunan teh secara
+                berkelanjutan.</p>
 
-            <p class="text-justify text-gray-700 mb-6">
-                <strong>Aktivitas</strong> Wisata Beragam aktivitas bisa dilakukan di Agro Wisata Kaligua, mulai dari
-                berkeliling perkebunan dengan tea walk, bersepeda mengelilingi area perkebunan, hingga menikmati
-                outbound dan camping. Wisata edukasi juga menjadi kegiatan yang banyak digemari oleh wisatawan, terutama
-                bagi anak-anak dan keluarga. Dalam program wisata edukasi ini, pengunjung bisa belajar langsung dari
-                petani dan pengelola perkebunan tentang teknik bercocok tanam yang ramah lingkungan serta pengelolaan
-                perkebunan teh secara berkelanjutan.
-            </p>
+            <p>Agro Wisata Kaligua juga kerap mengadakan berbagai acara tahunan, seperti Festival Teh Kaligua yang
+                menjadi ajang bagi masyarakat lokal dan pengunjung untuk berpartisipasi dalam perayaan budaya,
+                pertanian, dan kuliner lokal. Festival ini biasanya diselenggarakan pada musim panen teh, di mana
+                pengunjung bisa ikut memetik teh dan belajar lebih dalam tentang tradisi pertanian yang telah diwariskan
+                secara turun temurun.</p>
 
-            <p class="text-justify text-gray-700 mb-6">
-                <strong>Agro</strong> Wisata Kaligua juga kerap mengadakan berbagai acara tahunan, seperti Festival Teh
-                Kaligua yang menjadi ajang bagi masyarakat lokal dan pengunjung untuk berpartisipasi dalam perayaan
-                budaya, pertanian, dan kuliner lokal. Festival ini biasanya diselenggarakan pada musim panen teh, di
-                mana pengunjung bisa ikut memetik teh dan belajar lebih dalam tentang tradisi pertanian yang telah
-                diwariskan secara turun temurun.
-            </p>
+            <p><strong>Akses dan Lokasi</strong><br>
+                Untuk mencapai Agro Wisata Kaligua, pengunjung bisa menempuh perjalanan dari kota Purwokerto atau Tegal.
+                Dari pusat Kota Brebes, jaraknya sekitar 60 km, dan dapat ditempuh dengan mobil dalam waktu kurang lebih
+                2,5 jam. Jalur menuju kawasan ini cukup menantang dengan jalan berkelok di antara perbukitan, namun
+                pemandangan alam yang disuguhkan sepanjang perjalanan akan membuat perjalanan terasa menyenangkan.</p>
 
-            <p class="text-justify text-gray-700 mb-6">
-                <strong>Akses</strong> dan Lokasi Untuk mencapai Agro Wisata Kaligua, pengunjung bisa menempuh
-                perjalanan dari kota Purwokerto atau Tegal. Dari pusat Kota Brebes, jaraknya sekitar 60 km, dan dapat
-                ditempuh dengan mobil dalam waktu kurang lebih 2,5 jam. Jalur menuju kawasan ini cukup menantang dengan
-                jalan berkelok di antara perbukitan, namun pemandangan alam yang disuguhkan sepanjang perjalanan akan
-                membuat perjalanan terasa menyenangkan.
-            </p>
-
-            <p class="text-justify text-gray-700 mb-6">
-                <strong>Dengan</strong> berbagai pesona alam, fasilitas yang lengkap, serta pengalaman edukatif yang
-                ditawarkan, Agro Wisata Kaligua menjadi destinasi yang sempurna bagi wisatawan yang mencari ketenangan,
-                pengetahuan, serta keindahan alam yang asri.
-            </p>
+            <p>Dengan berbagai pesona alam, fasilitas yang lengkap, serta pengalaman edukatif yang ditawarkan, Agro
+                Wisata Kaligua menjadi destinasi yang sempurna bagi wisatawan yang mencari ketenangan, pengetahuan,
+                serta keindahan alam yang asri.</p>
         </div>
     </section>
 
 
+    <!-- Action Buttons -->
+    <div class="flex justify-center space-x-14 mt-12">
+        <a href="acara_festival.html" class="btn">
+            Acara & Festival
+        </a>
+        <a href="acara_festival2.html" class="btn">
+            Perubahan Operasional
+        </a>
+    </div><br><br><br>
 
+    <!-- Footer -->
+    <footer class="bg-[#6B9C89] text-white py-8">
+        <div
+            class="container mx-auto flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0 px-6">
+            <!-- Logo Section -->
+            <div class="flex flex-col items-center md:items-start">
+                <img src="../asset/logo/logo.png" alt="Logo" class="h-30 mb-4"> <!-- Sesuaikan ukuran logo -->
+            </div>
+
+            <!-- Links Section -->
+            <div class="footer-links flex flex-col md:flex-row md:space-x-16">
+                <div>
+                    <h3 class="font-semibold text-lg mb-4 text-center md:text-left">Link Terkait</h3>
+                    <ul>
+                        <li><a href="destinasi.html" class="hover:underline">Destinasi Wisata</a></li>
+                        <li><a href="panduan.html" class="hover:underline">Panduan Booking</a></li>
+                        <li><a href="cekkuota.html" class="hover:underline">Cek Kuota</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-semibold text-lg mb-4 text-center md:text-left">Informasi Lainnya</h3>
+                    <ul>
+                        <li><a href="berita.html" class="hover:underline">Berita</a></li>
+                        <li><a href="penginapan.html" class="hover:underline">Penginapan</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
 
     <script>
-        const menuBtn = document.getElementById('menu-btn');
-        const dropdown = document.getElementById('dropdown');
-
-        menuBtn.addEventListener('click', () => {
-            dropdown.classList.toggle('hidden');
+        document.getElementById('menu-btn').addEventListener('click', function () {
+            var menu = document.getElementById('dropdown');
+            menu.classList.toggle('hidden');
         });
-
     </script>
+
 </body>
 
 </html>
