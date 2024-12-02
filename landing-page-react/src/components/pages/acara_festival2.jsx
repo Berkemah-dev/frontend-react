@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import logo from "../../assets/logo/logo.jpg"
+import icon4 from "../../assets/icon/acarafestival.png"
 
 function AcaraFestival2() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -14,7 +16,7 @@ function AcaraFestival2() {
         <div className="container mx-auto flex items-center justify-between">
           {/* Logo & Menu Items */}
           <div className="flex items-center space-x-4">
-            <img src="../asset/logo/logo.png" alt="Logo" className="h-8" />
+            <img src={logo} alt="Logo" className="h-8" />
             <button onClick={toggleMenu} className="block md:hidden text-white focus:outline-none">
               <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24"
                    stroke="currentColor">
@@ -50,9 +52,10 @@ function AcaraFestival2() {
       <main className="container mx-auto py-10 text-center">
         <h1 className="text-3xl font-bold text-gray-700 mb-6">Acara & Festival</h1>
         <div className="mb-8">
-          <img src="../asset/icon/acarafestival.png" alt="Icon ceklis" className="w-72 mx-auto" />
+          <img src={icon4} alt="Icon ceklis" className="w-72 mx-auto" />
         </div>
-        <p className="text-gray-600 text-base">Kunjungi lagi lain kali untuk update Info tentang acara dan festival</p>
+        <p className="text-gray-600 text-base">perubahan operasional hanya sewaktu waktu dan tidak selalu ter update pada
+        halaman ini</p>
       </main>
     </div>
   );

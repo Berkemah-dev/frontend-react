@@ -1,4 +1,7 @@
 import React from 'react';
+import logo from "../../assets/logo/logo.jpg"
+import icon5 from "../../assets/icon/icon_ceklis.png"
+
 
 const KonfirTiketBerhasil = () => {
   const handleGoBack = () => {
@@ -9,7 +12,7 @@ const KonfirTiketBerhasil = () => {
     <div className="bg-gray-100 min-h-screen flex flex-col items-center justify-center">
       {/* Logo */}
       <div className="mb-8 text-center">
-        <img src="../asset/logo/logo.png" alt="Agrowisata Logo" className="h-20 sm:h-20 md:h-32 mx-auto" />
+        <img src={logo} alt="Agrowisata Logo" className="h-20 sm:h-20 md:h-32 mx-auto" />
       </div>
 
       {/* Title */}
@@ -18,7 +21,7 @@ const KonfirTiketBerhasil = () => {
       <div className="bg-white rounded-lg shadow-md p-8 w-full max-w-sm text-center">
         {/* Ceklis Icon */}
         <div className="mb-8 text-center">
-          <img src="../asset/icon/icon_ceklis.png" alt="icon ceklis" className="h-20 sm:h-20 md:h-32 mx-auto" />
+          <img src={icon5} alt="icon ceklis" className="h-20 sm:h-20 md:h-32 mx-auto" />
         </div>
         {/* Message */}
         <p className="text-sm text-black-500 mt-4">

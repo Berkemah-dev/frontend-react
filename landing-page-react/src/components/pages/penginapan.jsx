@@ -35,12 +35,12 @@ const Penginapan = () => {
 
             {/* Menu Items */}
             <ul className={`md:flex space-x-4 text-sm font-medium ${isMenuOpen ? 'block' : 'hidden'}`} id="menu">
-              <li><a href="beranda.html" className="hover:text-gray-200 border-b-2 border-transparent hover:border-white">Beranda</a></li>
-              <li><a href="destinasi.html" className="hover:text-gray-200 border-b-2 border-transparent hover:border-white">Destinasi Wisata</a></li>
-              <li><a href="panduan.html" className="hover:text-gray-200 border-b-2 border-transparent hover:border-white">Panduan Booking</a></li>
-              <li><a href="cekkuota.html" className="hover:text-gray-200 border-b-2 border-transparent hover:border-white">Cek Kuota</a></li>
-              <li><a href="berita.html" className="hover:text-gray-200 border-b-2 border-transparent hover:border-white">Berita</a></li>
-              <li><a href="penginapan.html" className="hover:text-gray-200 border-b-2 border-transparent hover:border-white">Penginapan</a></li>
+              <li><a href="/beranda" className="hover:text-gray-200 border-b-2 border-transparent hover:border-white">Beranda</a></li>
+              <li><a href="/destinasi" className="hover:text-gray-200 border-b-2 border-transparent hover:border-white">Destinasi Wisata</a></li>
+              <li><a href="/panduan" className="hover:text-gray-200 border-b-2 border-transparent hover:border-white">Panduan Booking</a></li>
+              <li><a href="/cekkuota" className="hover:text-gray-200 border-b-2 border-transparent hover:border-white">Cek Kuota</a></li>
+              <li><a href="/berita" className="hover:text-gray-200 border-b-2 border-transparent hover:border-white">Berita</a></li>
+              <li><a href="/penginapan" className="hover:text-gray-200 border-b-2 border-transparent hover:border-white">Penginapan</a></li>
             </ul>
           </div>
         </div>
@@ -48,12 +48,12 @@ const Penginapan = () => {
         {/* Mobile Dropdown Menu */}
         <div id="dropdown" className={`${isMenuOpen ? 'block' : 'hidden'} md:hidden`}>
           <ul className="space-y-4 text-center py-4">
-            <li><a href="index.html" className="block hover:text-gray-200">Beranda</a></li>
-            <li><a href="destinasi.html" className="block hover:text-gray-200">Destinasi Wisata</a></li>
-            <li><a href="panduan.html" className="block hover:text-gray-200">Panduan Booking</a></li>
-            <li><a href="cekkuota.html" className="block hover:text-gray-200">Cek Kuota</a></li>
-            <li><a href="berita.html" className="block hover:text-gray-200">Berita</a></li>
-            <li><a href="penginapan.html" className="block hover:text-gray-200">Penginapan</a></li>
+            <li><a href="/beranda" className="block hover:text-gray-200">Beranda</a></li>
+            <li><a href="/destinasi" className="block hover:text-gray-200">Destinasi Wisata</a></li>
+            <li><a href="/panduan" className="block hover:text-gray-200">Panduan Booking</a></li>
+            <li><a href="/cekkuota" className="block hover:text-gray-200">Cek Kuota</a></li>
+            <li><a href="/berita" className="block hover:text-gray-200">Berita</a></li>
+            <li><a href="/penginapan" className="block hover:text-gray-200">Penginapan</a></li>
           </ul>
         </div>
       </nav>

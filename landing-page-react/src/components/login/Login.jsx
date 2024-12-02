@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import logo from "../../assets/logo/logo.jpg"
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -7,15 +8,12 @@ const Login = () => {
 
   const handleLogin = async (e) => {
     e.preventDefault();
-
-    // Validasi login (bisa ditambahkan sesuai kebutuhan)
     if (email === '' || password === '') {
       setError('Email dan Password tidak boleh kosong.');
       return;
     }
 
     try {
-      // Kirim data login ke API
       const response = await fetch('http://localhost:5000/api/auth/login', {
         method: 'POST',
         headers: {
@@ -25,24 +23,16 @@ const Login = () => {
       });
 
       const data = await response.json();
-console.log(data)
       if (!response.ok) {
         throw new Error(data.message || 'Login gagal!');
       }
 
-      // Simpan token atau data user jika perlu
-      localStorage.setItem('token', data.token); // Asumsi API mengembalikan token
-
-      // Cek apakah user adalah admin
+      localStorage.setItem('token', data.token);
       if (data.role === 'admin') {
-        // Redirect ke halaman admin jika admin
-        window.location.href = '/';  // Ganti dengan routing yang sesuai
+        window.location.href = '/admin';
       } else {
-        // Redirect ke halaman pengguna biasa
-        window.location.href = '/admin'; // Ganti dengan routing yang sesuai
+        window.location.href = '/';
       }
-      console.log(data.role)
-
       alert('Login berhasil!');
     } catch (error) {
       setError(error.message);
@@ -50,48 +40,64 @@ console.log(data)
   };
 
   return (
-    <div className="flex justify-center items-center h-screen bg-gray-100">
-      <div className="bg-white p-8 rounded shadow-md w-full max-w-sm">
-        <h2 className="text-2xl font-semibold text-center mb-6">Login</h2>
+    <div className="bg-gray-100 min-h-screen flex flex-col items-center justify-center">
+      {/* Logo */}
+      <div className="mb-4 text-center">
+        <img src={logo} alt="Agrowisata Logo" className="mx-auto h-20 sm:h-20 md:h-32" />
+      </div>
+
+      {/* Login Form */}
+      <div className="bg-white shadow-lg rounded-2xl px-6 sm:px-8 md:px-5 py-8 w-full max-w-lg sm:max-w-md md:max-w-lg">
+        <h2 className="text-2xl font-bold text-gray-700 mb-4">Login</h2>
 
         {error && <p className="text-red-500 text-sm mb-4">{error}</p>}
 
         <form onSubmit={handleLogin}>
           <div className="mb-4">
-            <label htmlFor="email" className="block text-sm font-medium text-gray-700">Email</label>
+            <label className="block text-gray-600 font-medium text-sm mb-2" htmlFor="email">Email</label>
             <input
               type="email"
               id="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="w-full p-2 border border-gray-300 rounded mt-1"
+              placeholder="Email"
+              className="w-full px-4 py-3 border border-gray-300 rounded-full focus:ring focus:ring-green-300 focus:outline-none"
               required
             />
           </div>
 
           <div className="mb-6">
-            <label htmlFor="password" className="block text-sm font-medium text-gray-700">Password</label>
+            <label className="block text-gray-600 font-medium text-sm mb-2" htmlFor="password">Password</label>
             <input
               type="password"
               id="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="w-full p-2 border border-gray-300 rounded mt-1"
+              placeholder="Password"
+              className="w-full px-4 py-3 border border-gray-300 rounded-full focus:ring focus:ring-green-300 focus:outline-none"
               required
             />
           </div>
 
-          <button
-            type="submit"
-            className="w-full bg-[#6B9C89] text-white p-2 rounded hover:bg-[#4a7a64]"
-          >
-            Login
-          </button>
+          <div className="flex flex-col sm:flex-row items-center justify-between mt-6 space-y-4 sm:space-y-0 sm:space-x-4">
+            <p className="text-sm text-gray-500 text-center sm:text-left">
+              Belum punya akun? <a href="/register" className="text-green-500 hover:underline font-semibold">Daftar</a>
+            </p>
+            <button
+              type="button"
+              onClick={() => (window.location.href = '../beranda')}
+              className="bg-[#6B9C89] hover:bg-[#4f7f66] text-white font-semibold py-2 px-6 rounded-full transition duration-200 w-full sm:w-auto"
+            >
+              Kembali
+            </button>
+            <button
+              type="submit"
+              className="bg-[#6B9C89] hover:bg-[#4f7f66] text-white font-semibold py-2 px-6 rounded-full transition duration-200 w-full sm:w-auto"
+            >
+              Masuk
+            </button>
+          </div>
         </form>
-
-        <div className="mt-4 text-center">
-          <p className="text-sm">Belum punya akun? <a href="/register" className="text-[#6B9C89]">Daftar di sini</a></p>
-        </div>
       </div>
     </div>
   );

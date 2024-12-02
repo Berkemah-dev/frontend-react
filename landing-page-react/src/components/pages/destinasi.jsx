@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import logo from '../../assets/logo/logo.jpg'; // Path logo
 import poto3 from "../../assets/poto/kaligua.png"
 import poto5 from "../../assets/poto/puncaksakub.png"
@@ -13,18 +14,26 @@ const Destinasi = () => {
   const [nomorHp, setNomorHp] = useState('');
   const [jumlahTiket, setJumlahTiket] = useState(1);
   const [pemandu, setPemandu] = useState('0');
+  const [metodePembayaran, setMetodePembayaran] = useState('');
+  const navigate = useNavigate();
 
   const handleNamaChange = (e) => setNama(e.target.value);
   const handleNomorHpChange = (e) => setNomorHp(e.target.value);
   const handleJumlahTiketChange = (e) => setJumlahTiket(e.target.value);
   const handlePemanduChange = (e) => setPemandu(e.target.value);
+  const handleMetodePembayaranChange = (e) => setMetodePembayaran(e.target.value);
+
 
   const totalHarga = jumlahTiket * 25000; // Contoh harga tiket Rp 25.000
-
 
   // Handle mobile menu toggle
   const toggleMenu = () => {
     setMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  const handleSubmit = () => {
+    // Arahkan ke halaman konfirmasi tiket
+    navigate('/konfirmasitiket');
   };
 
   return (
@@ -49,12 +58,12 @@ const Destinasi = () => {
 
             {/* Menu Items */}
             <ul className={`md:flex space-x-4 text-sm font-medium ${isMobileMenuOpen ? 'block' : 'hidden'}`}>
-              <li><a href="beranda.html" className="hover:text-gray-200">Beranda</a></li>
-              <li><a href="destinasi.html" className="hover:text-gray-200">Destinasi Wisata</a></li>
-              <li><a href="panduan.html" className="hover:text-gray-200">Panduan Booking</a></li>
-              <li><a href="cekkuota.html" className="hover:text-gray-200">Cek Kuota</a></li>
-              <li><a href="berita.html" className="hover:text-gray-200">Berita</a></li>
-              <li><a href="penginapan.html" className="hover:text-gray-200">Penginapan</a></li>
+              <li><a href="/beranda" className="hover:text-gray-200">Beranda</a></li>
+              <li><a href="/destinasi" className="hover:text-gray-200">Destinasi Wisata</a></li>
+              <li><a href="/panduan" className="hover:text-gray-200">Panduan Booking</a></li>
+              <li><a href="/cekkuota" className="hover:text-gray-200">Cek Kuota</a></li>
+              <li><a href="/berita" className="hover:text-gray-200">Berita</a></li>
+              <li><a href="/penginapan" className="hover:text-gray-200">Penginapan</a></li>
             </ul>
           </div>
         </div>
@@ -219,22 +228,49 @@ const Destinasi = () => {
 
                     {/* Ringkasan dan Metode Pembayaran */}
                     <div>
-                        <div className="bg-gray-100 p-4 rounded-lg shadow-md mb-6">
-                            <h4 className="font-semibold text-lg mb-3">Ringkasan Pemesanan</h4>
-                            <p><strong>Nama:</strong> {nama}</p>
-                            <p><strong>Tiket:</strong> {jumlahTiket}</p>
-                            <p><strong>Total:</strong> Rp {totalHarga.toLocaleString()}</p>
-                        </div>
+                      <div className="bg-gray-100 p-4 rounded-lg shadow-md mb-6">
+                        <h4 className="font-semibold text-lg mb-3">Ringkasan Pemesanan</h4>
+                        <p><strong>Nama:</strong> {nama}</p>
+                        <p><strong>Tiket:</strong> {jumlahTiket}</p>
+                        <p><strong>Total:</strong> Rp {totalHarga.toLocaleString()}</p>
+                        <p><strong>Metode Pembayaran:</strong> {metodePembayaran || 'Belum dipilih'}</p>
+                      </div>
 
-                        <div className="flex justify-center gap-6 mt-6">
-                            <button className="flex flex-col items-center justify-center w-44 h-44 bg-[#6B9C89] text-white rounded-xl shadow-lg hover:bg-[#5A8675] focus:outline-none transition duration-200 relative">
-                                <img src={icon2} alt="Tunai Icon" className="w-100 h-100 mb-2" />
-                            </button>
-                            <button className="flex flex-col items-center justify-center w-44 h-44 bg-[#6B9C89] text-white rounded-xl shadow-lg hover:bg-[#5A8675] focus:outline-none transition duration-200 relative">
-                                <img src={icon1} alt="QRIS Icon" className="w-100 h-100 mb-2" />
-                            </button>
-                        </div>
+                      <div className="flex justify-center gap-6 mt-6">
+                        <label className="flex flex-col items-center justify-center w-44 h-44 bg-[#6B9C89] text-white rounded-xl shadow-lg cursor-pointer">
+                          <input
+                            type="radio"
+                            name="metodePembayaran"
+                            value="Tunai"
+                            onChange={handleMetodePembayaranChange}
+                            className="hidden"
+                          />
+                          <img src={icon2} alt="Tunai Icon" className="w-100 h-100 mb-2" />
+                          <span>Tunai</span>
+                        </label>
+                        <label className="flex flex-col items-center justify-center w-44 h-44 bg-[#6B9C89] text-white rounded-xl shadow-lg cursor-pointer">
+                          <input
+                            type="radio"
+                            name="metodePembayaran"
+                            value="QRIS"
+                            onChange={handleMetodePembayaranChange}
+                            className="hidden"
+                          />
+                          <img src={icon1} alt="QRIS Icon" className="w-100 h-100 mb-2" />
+                          <span>QRIS</span>
+                        </label>
+                      </div>
                     </div>
+                </div>
+
+                {/* Tombol Pesan */}
+                <div className="flex justify-center">
+                  <button
+                    type="button"
+                    onClick={handleSubmit}
+                    className="mt-6 w-1/2 bg-[#6B9C89] text-white py-2 rounded-lg hover:bg-[#588169]">
+                    Pesan
+                  </button>
                 </div>
             </div>
         </div>
@@ -242,10 +278,14 @@ const Destinasi = () => {
       {/* Footer */}
       <footer className="bg-[#6B9C89] text-white py-8">
         <div className="container mx-auto flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0 md:items-start px-6">
+          {/* Logo Section */}
           <div className="flex flex-col items-center md:items-start">
             <img src={logo} alt="Logo" className="h-30 mb-4" />
           </div>
+
+          {/* Links Section */}
           <div className="flex flex-col md:flex-row md:space-x-16">
+            {/* Link Terkait */}
             <div>
               <h3 className="font-semibold text-lg mb-4 text-center md:text-left">Link Terkait</h3>
               <ul className="space-y-2 text-sm">
@@ -256,6 +296,8 @@ const Destinasi = () => {
                 <li><a href="penginapan.html" className="hover:underline">Penginapan</a></li>
               </ul>
             </div>
+
+            {/* Informasi Section */}
             <div>
               <h3 className="font-semibold text-lg mb-4 text-center md:text-left">Informasi</h3>
               <ul className="space-y-2 text-sm">
@@ -275,7 +317,10 @@ const Destinasi = () => {
             </div>
           </div>
         </div>
-        <div className="text-center mt-8 text-sm text-gray-300">&copy; 2024 Agrowisata Kaligua Brebes. Semua Hak Cipta Dilindungi.</div>
+
+        <div className="text-center mt-8 text-sm text-gray-300">
+          &copy; 2024 Agrowisata Kaligua Brebes. Semua Hak Cipta Dilindungi.
+        </div>
       </footer>
     </div>
   );
