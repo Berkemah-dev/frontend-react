@@ -1,32 +1,271 @@
-// src/components/Destinations.jsx
+import React, { useState } from 'react';
+
 const Destinations = () => {
-    return (
-      <section className="bg-gray-50 py-12 px-6">
-        <div className="container mx-auto">
-          <h2 className="text-3xl font-bold text-gray-800 mb-6 text-center">Destinasi</h2>
-          <div className="relative group">
-            <div className="flex space-x-6 overflow-x-auto snap-x snap-mandatory scroll-smooth scrollbar-hide px-2">
-              <div className="flex-shrink-0 w-[400px] h-[250px] relative rounded-lg overflow-hidden snap-start">
-                <img src="./asset/poto/Group 1.png" alt="Gurun Teh" className="w-full h-full object-cover" />
-                <div className="absolute bottom-0 left-0 bg-black bg-opacity-10 w-full text-white py-3 pl-3 text-lg">Gurun Teh</div>
-              </div>
-              <div className="flex-shrink-0 w-[400px] h-[250px] relative rounded-lg overflow-hidden snap-start">
-                <img src="./asset/poto/Group 5.png" alt="Puncak Sakub" className="w-full h-full object-cover" />
-                <div className="absolute bottom-0 left-0 bg-black bg-opacity-10 w-full text-white py-3 pl-3 text-lg">Puncak Sakub</div>
-              </div>
-              <div className="flex-shrink-0 w-[400px] h-[250px] relative rounded-lg overflow-hidden snap-start">
-                <img src="./asset/poto/Group 5.png" alt="Kolam Renang" className="w-full h-full object-cover" />
-                <div className="absolute bottom-0 left-0 bg-black bg-opacity-10 w-full text-white py-3 pl-3 text-lg">Kolam Renang</div>
-              </div>
-            </div>
-            {/* Navigation Buttons */}
-            <button className="hidden absolute left-0 top-1/2 transform -translate-y-1/2 bg-gray-800 bg-opacity-50 text-white px-3 py-1 rounded-full group-hover:block">&larr;</button>
-            <button className="hidden absolute right-0 top-1/2 transform -translate-y-1/2 bg-gray-800 bg-opacity-50 text-white px-3 py-1 rounded-full group-hover:block">&rarr;</button>
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const handleMenuToggle = () => {
+    setMenuOpen(!menuOpen);
+  };
+
+  return (
+    <div className="bg-gray-50">
+      {/* Navbar */}
+      <nav className="bg-[#6B9C89] text-white px-6 py-4 shadow-md">
+        <div className="container mx-auto flex items-center justify-between">
+          {/* Logo and Menu Items Group */}
+          <div className="flex items-center space-x-4">
+            {/* Logo */}
+            <img src="../asset/logo/logo.png" alt="Logo" className="h-8" />
+
+            {/* Hamburger Menu */}
+            <button
+              id="menu-btn"
+              className="block md:hidden text-white focus:outline-none"
+              onClick={handleMenuToggle}
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M4 6h16M4 12h16m-7 6h7"
+                />
+              </svg>
+            </button>
+
+            {/* Menu Items */}
+            <ul
+              id="menu"
+              className={`md:flex space-x-4 text-sm font-medium ${menuOpen ? 'block' : 'hidden'}`}
+            >
+              <li>
+                <a
+                  href="beranda.html"
+                  className="hover:text-gray-200 border-b-2 border-transparent hover:border-white"
+                >
+                  Beranda
+                </a>
+              </li>
+              <li>
+                <a
+                  href="destinasi.html"
+                  className="hover:text-gray-200 border-b-2 border-transparent hover:border-white"
+                >
+                  Destinasi Wisata
+                </a>
+              </li>
+              <li>
+                <a
+                  href="panduan.html"
+                  className="hover:text-gray-200 border-b-2 border-transparent hover:border-white"
+                >
+                  Panduan Booking
+                </a>
+              </li>
+              <li>
+                <a
+                  href="cekkuota.html"
+                  className="hover:text-gray-200 border-b-2 border-transparent hover:border-white"
+                >
+                  Cek Kuota
+                </a>
+              </li>
+              <li>
+                <a
+                  href="berita.html"
+                  className="hover:text-gray-200 border-b-2 border-transparent hover:border-white"
+                >
+                  Berita
+                </a>
+              </li>
+              <li>
+                <a
+                  href="penginapan.html"
+                  className="hover:text-gray-200 border-b-2 border-transparent hover:border-white"
+                >
+                  Penginapan
+                </a>
+              </li>
+            </ul>
           </div>
         </div>
-      </section>
-    );
-  };
-  
-  export default Destinations;
-  
+
+        {/* Mobile Dropdown Menu */}
+        {menuOpen && (
+          <div id="dropdown">
+            <ul className="space-y-4 text-center py-4">
+              <li>
+                <a href="index.html" className="block hover:text-gray-200">
+                  Beranda
+                </a>
+              </li>
+              <li>
+                <a href="destinasi.html" className="block hover:text-gray-200">
+                  Destinasi Wisata
+                </a>
+              </li>
+              <li>
+                <a href="panduan.html" className="block hover:text-gray-200">
+                  Panduan Booking
+                </a>
+              </li>
+              <li>
+                <a href="cekkuota.html" className="block hover:text-gray-200">
+                  Cek Kuota
+                </a>
+              </li>
+              <li>
+                <a href="berita.html" className="block hover:text-gray-200">
+                  Berita
+                </a>
+              </li>
+              <li>
+                <a href="penginapan.html" className="block hover:text-gray-200">
+                  Penginapan
+                </a>
+              </li>
+            </ul>
+          </div>
+        )}
+      </nav>
+
+      <div className="container mx-auto px-4 pt-12">
+        <div className="text-center mb-8">
+          <h2 className="text-3xl font-semibold">Destinasi Wisata</h2>
+        </div>
+
+        {/* Destinations List */}
+        {/* Repeat this section for each destination */}
+        <div className="flex flex-col md:flex-row items-center mb-8 bg-white shadow-md rounded-lg overflow-hidden">
+          <img
+            src="../asset/poto/kaligua.png"
+            alt="Kaligua"
+            className="destination-img w-full md:w-1/2 h-64 md:h-auto object-cover"
+          />
+          <div className="p-6 md:w-1/2">
+            <h3 className="text-xl font-semibold mb-2">Kaligua</h3>
+            <p className="text-gray-700 text-sm">
+              Kaligua adalah destinasi agrowisata di lereng Gunung Slamet yang menawarkan kebun teh luas,
+              pemandian air panas, gua Jepang, serta aktivitas seperti trekking dan tea walk. Nikmati sunrise di
+              Bukit Kaligua, suasana sejuk, dan konsep ekowisata yang cocok untuk relaksasi dan healing.
+            </p>
+          </div>
+        </div>
+
+        {/* Repeat for other destinations... */}
+
+      </div>
+
+      {/* Footer */}
+      <footer className="bg-[#6B9C89] text-white py-8">
+        <div className="container mx-auto flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0 md:items-start px-6">
+          {/* Logo Section */}
+          <div className="flex flex-col items-center md:items-start">
+            <img src="../asset/logo/logo.png" alt="Logo" className="h-30 mb-4" />
+          </div>
+
+          {/* Links Section */}
+          <div className="flex flex-col md:flex-row md:space-x-16">
+            {/* Link Terkait */}
+            <div>
+              <h3 className="font-semibold text-lg mb-4 text-center md:text-left">Link Terkait</h3>
+              <ul className="space-y-2 text-sm">
+                <li>
+                  <a href="destinasi.html" className="hover:underline">
+                    Destinasi Wisata
+                  </a>
+                </li>
+                <li>
+                  <a href="panduan.html" className="hover:underline">
+                    Panduan Booking
+                  </a>
+                </li>
+                <li>
+                  <a href="cekkuota.html" className="hover:underline">
+                    Cek Kuota
+                  </a>
+                </li>
+                <li>
+                  <a href="berita.html" className="hover:underline">
+                    Berita
+                  </a>
+                </li>
+                <li>
+                  <a href="penginapan.html" className="hover:underline">
+                    Penginapan
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            {/* Informasi Section */}
+            <div>
+              <h3 className="font-semibold text-lg mb-4 text-center md:text-left">Informasi</h3>
+              <ul className="space-y-2 text-sm">
+                <li className="flex items-center justify-center md:justify-start">
+                  <svg
+                    className="h-5 w-5 mr-2"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M3 10l7-7m0 0l7 7M10 3v16"
+                    />
+                  </svg>
+                  <span>Jl. Pandansari, Kaligua, Pandansari, Brebes, Jawa Tengah 52276</span>
+                </li>
+                <li className="flex items-center justify-center md:justify-start">
+                  <svg
+                    className="h-5 w-5 mr-2"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M15 12H9m4 8H9a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-4"
+                    />
+                  </svg>
+                  <span>info@kaligua.com</span>
+                </li>
+                <li className="flex items-center justify-center md:justify-start">
+                  <svg
+                    className="h-5 w-5 mr-2"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M3 6h18M3 12h18m-9 6h9"
+                    />
+                  </svg>
+                  <span>+62 813-7222-3888</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
+};
+
+export default Destinations;

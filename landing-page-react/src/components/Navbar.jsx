@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
+import logo from '../assets/logo/logo.jpg'
 
 const Navbar = () => {
   const [dropdown, setDropdown] = useState(false);
@@ -13,7 +14,7 @@ const Navbar = () => {
       <div className="container mx-auto flex items-center justify-between">
         {/* Logo and Menu Items Group */}
         <div className="flex items-center space-x-4">
-          <img src="./asset/logo/logo.png" alt="Logo" className="h-8" />
+          <img src={logo} alt="Logo" className="h-8" />
           
           {/* Hamburger Menu */}
           <button onClick={toggleDropdown} className="block md:hidden text-white focus:outline-none">

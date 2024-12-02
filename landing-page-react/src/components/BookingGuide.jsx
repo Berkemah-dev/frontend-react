@@ -1,10 +1,12 @@
+import poto4 from '../assets/poto/panduan.png'
+
 // src/components/BookingGuide.jsx
 const BookingGuide = () => {
     return (
       <section className="bg-white py-12 px-6">
         <div className="container mx-auto flex items-center">
           <div className="mr-6">
-            <img src="./asset/poto/panduan.png" alt="Panduan Booking Icon" className="w-32 h-32" />
+            <img src={poto4} alt="Panduan Booking Icon" className="w-32 h-32" />
           </div>
           <div>
             <h2 className="text-2xl font-semibold text-gray-800 mb-4">Panduan Booking</h2>

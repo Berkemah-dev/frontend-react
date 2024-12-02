@@ -1,7 +1,26 @@
 import React, { useState } from 'react';
+import logo from '../../assets/logo/logo.jpg'; // Path logo
+import poto3 from "../../assets/poto/kaligua.png"
+import poto5 from "../../assets/poto/puncaksakub.png"
+import poto6 from "../../assets/poto/gurunteh.png"
+import poto7 from "../../assets/poto/goajepang.png"
+import icon1 from "../../assets/icon/iconqris.png"
+import icon2 from "../../assets/icon/icontunai.png"
 
 const Destinasi = () => {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [nama, setNama] = useState('');
+  const [nomorHp, setNomorHp] = useState('');
+  const [jumlahTiket, setJumlahTiket] = useState(1);
+  const [pemandu, setPemandu] = useState('0');
+
+  const handleNamaChange = (e) => setNama(e.target.value);
+  const handleNomorHpChange = (e) => setNomorHp(e.target.value);
+  const handleJumlahTiketChange = (e) => setJumlahTiket(e.target.value);
+  const handlePemanduChange = (e) => setPemandu(e.target.value);
+
+  const totalHarga = jumlahTiket * 25000; // Contoh harga tiket Rp 25.000
+
 
   // Handle mobile menu toggle
   const toggleMenu = () => {
@@ -15,7 +34,7 @@ const Destinasi = () => {
         <div className="container mx-auto flex items-center justify-between">
           <div className="flex items-center space-x-4">
             {/* Logo */}
-            <img src="../asset/logo/logo.png" alt="Logo" className="h-8" />
+            <img src={logo} alt="Logo" className="h-8" />
 
             {/* Hamburger Menu */}
             <button
@@ -49,7 +68,7 @@ const Destinasi = () => {
 
         {/* Destination 1 */}
         <div className="flex flex-col md:flex-row items-center mb-8 bg-white shadow-md rounded-lg overflow-hidden">
-          <img src="../asset/poto/kaligua.png" alt="Kaligua" className="destination-img w-full md:w-1/2 h-64 md:h-auto object-cover" />
+          <img src={poto3} alt="Kaligua" className="destination-img w-full md:w-1/2 h-64 md:h-auto object-cover" />
           <div className="p-6 md:w-1/2">
             <h3 className="text-xl font-semibold mb-2">Kaligua</h3>
             <p className="text-gray-700 text-sm">
@@ -57,6 +76,51 @@ const Destinasi = () => {
             </p>
           </div>
         </div>
+
+                    {/* Destinasi 2 */}
+                    <div className="flex flex-col md:flex-row-reverse items-center mb-8 bg-white shadow-md rounded-lg overflow-hidden">
+                <img
+                    src={poto5}
+                    alt="Puncak Sakub"
+                    className="destination-img w-full md:w-1/2 h-64 md:h-auto object-cover"
+                />
+                <div className="p-6 md:w-1/2">
+                    <h3 className="text-xl font-semibold mb-2">Puncak Sakub</h3>
+                    <p className="text-gray-700 text-sm">
+                        Puncak Sakub adalah salah satu spot terbaik di Kaligua yang menawarkan pemandangan alam pegunungan yang memukau. Puncak ini terletak di ketinggian sekitar 1.900 meter di atas permukaan laut.
+                    </p>
+                </div>
+            </div>
+
+            {/* Destinasi 3 */}
+            <div className="flex flex-col md:flex-row items-center mb-8 bg-white shadow-md rounded-lg overflow-hidden">
+                <img
+                    src={poto6}
+                    alt="Gurun Teh"
+                    className="w-full md:w-1/2 h-64 object-cover"
+                />
+                <div className="p-6 md:w-1/2">
+                    <h3 className="text-xl font-semibold mb-2">Gurun Teh</h3>
+                    <p className="text-gray-700 text-sm">
+                        Gurun Teh merujuk pada hamparan luas perkebunan teh di lereng Gunung Slamet. Pemandangan hijau tak berujung dengan udara sejuk menciptakan pengalaman agrowisata yang menenangkan.
+                    </p>
+                </div>
+            </div>
+
+            {/* Destinasi 4 */}
+            <div className="flex flex-col md:flex-row-reverse items-center mb-8 bg-white shadow-md rounded-lg overflow-hidden">
+                <img
+                    src={poto7}
+                    alt="Goa Jepang"
+                    className="destination-img w-full md:w-1/2 h-64 md:h-auto object-cover"
+                />
+                <div className="p-6 md:w-1/2">
+                    <h3 className="text-xl font-semibold mb-2">Goa Jepang</h3>
+                    <p className="text-gray-700 text-sm">
+                        Goa Jepang adalah situs bersejarah dari era Perang Dunia II yang terletak di tengah kebun teh Kaligua. Lorong-lorong gua ini menciptakan pengalaman eksplorasi yang unik.
+                    </p>
+                </div>
+            </div>
 
         {/* Other Destinations */}
         {/* Repeating the above section for other destinations (Puncak Sakub, Gurun Teh, Goa Jepang) */}
@@ -74,35 +138,112 @@ const Destinasi = () => {
             </div>
           </div>
         </div>
-
-        {/* Additional Info Buttons */}
-        <div className="bg-white shadow-md rounded-lg p-6 my-8">
-          <div className="flex flex-wrap justify-center gap-6">
-            {/* Add buttons similar to the ones in your HTML */}
-          </div>
-        </div>
-
-        {/* Booking Form */}
-        <div className="bg-white shadow-md rounded-lg p-6">
-          <h3 className="text-xl font-semibold text-center mb-6">Form Pemesanan (Booking) Tiket</h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {/* Left side form */}
-            <div>
-              {/* Form inputs for Nama, No. HP, Jumlah Tiket, etc. */}
-            </div>
-            {/* Right side summary and payment options */}
-            <div>
-              {/* Booking summary and payment methods (Tunai, QRIS, etc.) */}
-            </div>
-          </div>
-        </div>
       </div>
+
+      <div className="container mx-auto px-4 py-12">
+            {/* Informasi Tambahan */}
+            <div className="bg-white shadow-md rounded-lg p-6 my-8">
+                <div className="flex flex-wrap justify-center gap-6">
+                    <button className="flex items-center bg-[#6B9C89] text-white text-base font-medium py-3 px-6 rounded-full shadow-md hover:bg-[#5A8675] focus:outline-none">
+                        <span className="inline-block w-3 h-3 bg-white rounded-full mr-3"></span>
+                        Harga tiket dapat berubah sewaktu-waktu
+                    </button>
+                    <button className="flex items-center bg-[#6B9C89] text-white text-base font-medium py-3 px-6 rounded-full shadow-md hover:bg-[#5A8675] focus:outline-none">
+                        <span className="inline-block w-3 h-3 bg-white rounded-full mr-3"></span>
+                        Objek wisata dapat tutup sewaktu-waktu
+                    </button>
+                    <button className="flex items-center bg-[#6B9C89] text-white text-base font-medium py-3 px-6 rounded-full shadow-md hover:bg-[#5A8675] focus:outline-none">
+                        <span className="inline-block w-3 h-3 bg-white rounded-full mr-3"></span>
+                        1 tiket hanya berlaku untuk satu orang
+                    </button>
+                    <button className="flex items-center bg-[#6B9C89] text-white text-base font-medium py-3 px-6 rounded-full shadow-md hover:bg-[#5A8675] focus:outline-none">
+                        <span className="inline-block w-3 h-3 bg-white rounded-full mr-3"></span>
+                        1 tiket untuk 4 destinasi wisata
+                    </button>
+                    <button className="flex items-center bg-[#6B9C89] text-white text-base font-medium py-3 px-6 rounded-full shadow-md hover:bg-[#5A8675] focus:outline-none">
+                        <span className="inline-block w-3 h-3 bg-white rounded-full mr-3"></span>
+                        1 pemandu hanya berlaku untuk 10 orang
+                    </button>
+                </div>
+            </div>
+
+            {/* Form Pemesanan */}
+            <div className="bg-white shadow-md rounded-lg p-6">
+                <h3 className="text-xl font-semibold text-center mb-6">Form Pemesanan (Booking) Tiket</h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    {/* Formulir Pengisian */}
+                    <div>
+                        <div className="mb-6">
+                            <label className="block text-sm font-medium mb-2">Nama Lengkap</label>
+                            <input
+                                type="text"
+                                value={nama}
+                                onChange={handleNamaChange}
+                                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#6B9C89]"
+                                placeholder="Masukkan nama lengkap"
+                            />
+                        </div>
+                        <div className="mb-6">
+                            <label className="block text-sm font-medium mb-2">No. HP</label>
+                            <input
+                                type="text"
+                                value={nomorHp}
+                                onChange={handleNomorHpChange}
+                                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#6B9C89]"
+                                placeholder="Masukkan nomor HP"
+                            />
+                        </div>
+                        <div className="mb-6">
+                            <label className="block text-sm font-medium mb-2">Jumlah Tiket</label>
+                            <input
+                                type="number"
+                                min="1"
+                                value={jumlahTiket}
+                                onChange={handleJumlahTiketChange}
+                                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#6B9C89]"
+                                placeholder="Masukkan jumlah tiket"
+                            />
+                        </div>
+                        <div className="mb-6">
+                            <label className="block text-sm font-medium mb-2">Tambah Pemandu</label>
+                            <select
+                                value={pemandu}
+                                onChange={handlePemanduChange}
+                                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#6B9C89]"
+                            >
+                                <option value="0">Tidak</option>
+                                <option value="1">Ya</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    {/* Ringkasan dan Metode Pembayaran */}
+                    <div>
+                        <div className="bg-gray-100 p-4 rounded-lg shadow-md mb-6">
+                            <h4 className="font-semibold text-lg mb-3">Ringkasan Pemesanan</h4>
+                            <p><strong>Nama:</strong> {nama}</p>
+                            <p><strong>Tiket:</strong> {jumlahTiket}</p>
+                            <p><strong>Total:</strong> Rp {totalHarga.toLocaleString()}</p>
+                        </div>
+
+                        <div className="flex justify-center gap-6 mt-6">
+                            <button className="flex flex-col items-center justify-center w-44 h-44 bg-[#6B9C89] text-white rounded-xl shadow-lg hover:bg-[#5A8675] focus:outline-none transition duration-200 relative">
+                                <img src={icon2} alt="Tunai Icon" className="w-100 h-100 mb-2" />
+                            </button>
+                            <button className="flex flex-col items-center justify-center w-44 h-44 bg-[#6B9C89] text-white rounded-xl shadow-lg hover:bg-[#5A8675] focus:outline-none transition duration-200 relative">
+                                <img src={icon1} alt="QRIS Icon" className="w-100 h-100 mb-2" />
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
       {/* Footer */}
       <footer className="bg-[#6B9C89] text-white py-8">
         <div className="container mx-auto flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0 md:items-start px-6">
           <div className="flex flex-col items-center md:items-start">
-            <img src="../asset/logo/logo.png" alt="Logo" className="h-30 mb-4" />
+            <img src={logo} alt="Logo" className="h-30 mb-4" />
           </div>
           <div className="flex flex-col md:flex-row md:space-x-16">
             <div>

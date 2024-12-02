@@ -1,4 +1,9 @@
 import React, { useState } from 'react';
+import logo from '../../assets/logo/logo.jpg'; // Path logo
+import poto12 from "../../assets/poto/hotelGrandian.png"
+import poto13 from "../../assets/poto/hotelsalsa.png"
+import poto14 from "../../assets/poto/hotelfisa.png"
+import poto15 from "../../assets/poto/hotelteras.png"
 
 const Penginapan = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -15,7 +20,7 @@ const Penginapan = () => {
           {/* Logo and Menu Items Group */}
           <div className="flex items-center space-x-4">
             {/* Logo */}
-            <img src="../asset/logo/logo.png" alt="Logo" className="h-8" />
+            <img src={logo} alt="Logo" className="h-8" />
 
             {/* Hamburger Menu */}
             <button
@@ -60,7 +65,7 @@ const Penginapan = () => {
         <div className="space-y-6">
           {/* Card 1 */}
           <div className="flex bg-white shadow-lg rounded-lg overflow-hidden hover:scale-105 transition-all duration-300">
-            <img src="../asset/poto/kaligua.png" alt="Villa Kaligua" className="w-1/2 h-56 object-cover" />
+            <img src={poto12} alt="Villa Kaligua" className="w-1/2 h-56 object-cover" />
             <div className="p-6 w-1/2">
               <h3 className="text-xl font-semibold text-gray-800">Villa Kaligua</h3>
               <p className="text-gray-600 mb-4">Nikmati kenyamanan menginap di Villa Kaligua dengan pemandangan alam yang indah dan fasilitas lengkap, termasuk kolam renang dan restoran. Tersedia ruang terbuka yang nyaman untuk relaksasi.</p>
@@ -72,7 +77,7 @@ const Penginapan = () => {
 
           {/* Card 2 */}
           <div className="flex bg-white shadow-lg rounded-lg overflow-hidden hover:scale-105 transition-all duration-300">
-            <img src="../asset/poto/kaligua.png" alt="Homestay Kaligua" className="w-1/2 h-56 object-cover" />
+            <img src={poto13} alt="Homestay Kaligua" className="w-1/2 h-56 object-cover" />
             <div className="p-6 w-1/2">
               <h3 className="text-xl font-semibold text-gray-800">Homestay Kaligua</h3>
               <p className="text-gray-600 mb-4">Homestay yang nyaman dan ramah untuk keluarga, dengan fasilitas lengkap dan suasana yang tenang dan alami. Lokasi ideal untuk menikmati keindahan alam Kaligua.</p>
@@ -84,7 +89,7 @@ const Penginapan = () => {
 
           {/* Card 3 */}
           <div className="flex bg-white shadow-lg rounded-lg overflow-hidden hover:scale-105 transition-all duration-300">
-            <img src="../asset/poto/kaligua.png" alt="Hotel Kaligua" className="w-1/2 h-56 object-cover" />
+            <img src={poto14} alt="Hotel Kaligua" className="w-1/2 h-56 object-cover" />
             <div className="p-6 w-1/2">
               <h3 className="text-xl font-semibold text-gray-800">Hotel Kaligua</h3>
               <p className="text-gray-600 mb-4">Hotel bintang tiga dengan fasilitas modern, pemandangan alam yang memukau, dan layanan kelas satu. Cocok untuk wisatawan yang mencari kenyamanan selama liburan.</p>
@@ -96,7 +101,7 @@ const Penginapan = () => {
 
           {/* Card 4 */}
           <div className="flex bg-white shadow-lg rounded-lg overflow-hidden hover:scale-105 transition-all duration-300">
-            <img src="../asset/poto/kaligua.png" alt="Hotel Kaligua2" className="w-1/2 h-56 object-cover" />
+            <img src={poto15} alt="Hotel Kaligua2" className="w-1/2 h-56 object-cover" />
             <div className="p-6 w-1/2">
               <h3 className="text-xl font-semibold text-gray-800">Hotel Kaligua2</h3>
               <p className="text-gray-600 mb-4">Hotel bintang tiga dengan fasilitas modern, pemandangan alam yang memukau, dan layanan kelas satu. Cocok untuk wisatawan yang mencari kenyamanan selama liburan.</p>
@@ -113,7 +118,7 @@ const Penginapan = () => {
         <div className="container mx-auto flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0 md:items-start px-6">
           {/* Logo Section */}
           <div className="flex flex-col items-center md:items-start">
-            <img src="../asset/logo/logo.png" alt="Logo" className="h-30 mb-4" />
+            <img src={logo} alt="Logo" className="h-30 mb-4" />
           </div>
 
           {/* Links Section */}

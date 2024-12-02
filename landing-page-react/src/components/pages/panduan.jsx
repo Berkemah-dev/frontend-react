@@ -1,4 +1,9 @@
 import React, { useState } from 'react';
+import logo from "../../assets/logo/logo.jpg";
+import poto8 from "../../assets/poto/panduan1.png"
+import poto9 from "../../assets/poto/panduan2.png"
+import poto10 from "../../assets/poto/panduan3.png"
+import poto11 from "../../assets/poto/panduan4.png"
 
 const Panduan = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -15,7 +20,7 @@ const Panduan = () => {
           {/* Logo and Menu Items Group */}
           <div className="flex items-center space-x-4">
             {/* Logo */}
-            <img src="../asset/logo/logo.png" alt="Logo" className="h-8" />
+            <img src={logo} alt="Logo" className="h-8" />
 
             {/* Hamburger Menu */}
             <button
@@ -63,7 +68,7 @@ const Panduan = () => {
             <div className="step-number">1</div>
             <div>
               <h2 className="text-xl font-semibold mb-2">Buka Halaman Agrowisata</h2>
-              <img src="../asset/poto/panduan1.png" alt="Buka Halaman Agrowisata" className="mb-4" />
+              <img src={poto8} alt="Buka Halaman Agrowisata" className="mb-4" />
               <p className="text-gray-700">
                 Akses situs resmi Agrowisata Kaligua melalui browser. Di halaman utama, pilih opsi "Destinasi" untuk melihat pilihan wisata yang tersedia di Kebun Teh Kaligua.
               </p>
@@ -75,7 +80,7 @@ const Panduan = () => {
             <div className="step-number">2</div>
             <div>
               <h2 className="text-xl font-semibold mb-2">Cek Kuota</h2>
-              <img src="../asset/poto/panduan2.png" alt="Cek Kuota" className="mb-4" />
+              <img src={poto9} alt="Cek Kuota" className="mb-4" />
               <p className="text-gray-700">
                 Sebelum memilih tanggal kunjungan wisata, harap cek ketersediaan kuota terlebih dahulu. Klik “Cek Kuota” pada bagian atas, lalu sesuaikan jadwal kunjungan Anda dengan kuota yang tersedia.
               </p>
@@ -87,7 +92,7 @@ const Panduan = () => {
             <div className="step-number">3</div>
             <div>
               <h2 className="text-xl font-semibold mb-2">Registrasi</h2>
-              <img src="../asset/poto/panduan3.png" alt="Registrasi" className="mb-4" />
+              <img src={poto10} alt="Registrasi" className="mb-4" />
               <p className="text-gray-700">
                 <ol className="list-decimal pl-5">
                   <li>Pastikan Anda sudah memiliki akun. Jika belum, silakan lakukan registrasi dengan mengisi informasi yang diperlukan di halaman pendaftaran.</li>
@@ -103,7 +108,7 @@ const Panduan = () => {
             <div className="step-number">4</div>
             <div>
               <h2 className="text-xl font-semibold mb-2">Isi Form Pemesanan</h2>
-              <img src="../asset/poto/panduan4.png" alt="Isi Form Pemesanan" className="mb-4" />
+              <img src={poto11} alt="Isi Form Pemesanan" className="mb-4" />
               <p className="text-gray-700">
                 <ol className="list-decimal pl-5">
                   <li>Pilih destinasi yang ingin dikunjungi di menu Destinasi Wisata.</li>
@@ -124,7 +129,7 @@ const Panduan = () => {
         <div className="container mx-auto flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0 md:items-start px-6">
           {/* Logo Section */}
           <div className="flex flex-col items-center md:items-start">
-            <img src="../asset/logo/logo.png" alt="Logo" className="h-30 mb-4" />
+            <img src={logo} alt="Logo" className="h-30 mb-4" />
           </div>
 
           {/* Links Section */}

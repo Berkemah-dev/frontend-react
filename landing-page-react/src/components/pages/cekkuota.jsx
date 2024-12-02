@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import logo from "../../assets/logo/logo.jpg"
 
 function CekKuota() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -25,7 +26,7 @@ function CekKuota() {
         <div className="container mx-auto flex items-center justify-between">
           <div className="flex items-center space-x-4">
             {/* Logo */}
-            <img src="../asset/logo/logo.png" alt="Logo" className="h-8" />
+            <img src={logo} alt="Logo" className="h-8" />
 
             {/* Hamburger Menu */}
             <button onClick={toggleMenu} className="block md:hidden text-white focus:outline-none">
@@ -64,21 +65,32 @@ function CekKuota() {
         <h1 className="text-2xl md:text-3xl font-semibold text-center mb-6">Cek Kuota</h1>
 
         {/* Date Picker Button */}
-        <div className="flex justify-start mb-6">
-          <button onClick={handleCalendarClick} className="datepicker-btn">
-            Pilih Tanggal
-            <img src="https://img.icons8.com/ios/50/ffffff/calendar.png" alt="Calendar Icon" />
-          </button>
-          {showCalendar && (
-            <input 
-              type="date" 
-              id="datePicker" 
-              value={selectedDate} 
-              onChange={handleDateChange} 
-              className="hidden" 
-            />
-          )}
-        </div>
+        <div className="flex flex-col justify-start items-start mb-6 relative">
+  {/* Button untuk menampilkan Date Picker */}
+  <button
+    onClick={handleCalendarClick}
+    className="flex items-center bg-[#6B9C89] text-white py-2 px-4 rounded shadow hover:bg-[#5A8675] focus:outline-none"
+  >
+    Pilih Tanggal
+    <img
+      src="https://img.icons8.com/ios/50/ffffff/calendar.png"
+      alt="Calendar Icon"
+      className="w-5 h-5 ml-2"
+    />
+  </button>
+
+  {/* Input Date Picker */}
+  {showCalendar && (
+    <input
+      type="date"
+      id="datePicker"
+      value={selectedDate}
+      onChange={handleDateChange}
+      className="mt-2 px-4 py-2 border border-gray-300 rounded-lg shadow focus:outline-none focus:ring-2 focus:ring-[#6B9C89]"
+    />
+  )}
+</div>
+
 
         {/* Table */}
         <div className="overflow-x-auto bg-white shadow-lg rounded-lg">
