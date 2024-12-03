@@ -1,12 +1,32 @@
-import { Link } from 'react-router-dom';
-import { useState } from 'react';
-import logo from '../assets/logo/logo.jpg'
+import { Link, useNavigate } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import logo from '../assets/logo/logo.jpg';
 
 const Navbar = () => {
   const [dropdown, setDropdown] = useState(false);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const navigate = useNavigate();
+
+  // Memeriksa status login saat komponen dimuat
+  useEffect(() => {
+    const token = localStorage.getItem('token');
+    if (token) {
+      setIsAuthenticated(true); // Pengguna sudah login
+    } else {
+      setIsAuthenticated(false); // Pengguna belum login
+    }
+  }, []);
 
   const toggleDropdown = () => {
     setDropdown(!dropdown);
+  };
+
+  const handleLogout = () => {
+    // Hapus token dan data pengguna dari localStorage
+    localStorage.removeItem('token');
+    localStorage.removeItem('user');
+    setIsAuthenticated(false); // Perbarui status login
+    navigate('/'); // Arahkan pengguna ke halaman utama setelah logout
   };
 
   return (
@@ -36,8 +56,16 @@ const Navbar = () => {
 
         {/* Buttons */}
         <div className="hidden md:flex space-x-4">
-          <Link to="/register" className="bg-white text-[#6B9C89] px-4 py-2 rounded font-medium hover:bg-[#6B9C89] hover:text-white text-sm">Registrasi</Link>
-          <Link to="/login" className="bg-white text-[#6B9C89] px-4 py-2 rounded font-medium hover:bg-[#6B9C89] hover:text-white text-sm">Login</Link>
+          {!isAuthenticated ? (
+            <>
+              <Link to="/register" className="bg-white text-[#6B9C89] px-4 py-2 rounded font-medium hover:bg-[#6B9C89] hover:text-white text-sm">Registrasi</Link>
+              <Link to="/login" className="bg-white text-[#6B9C89] px-4 py-2 rounded font-medium hover:bg-[#6B9C89] hover:text-white text-sm">Login</Link>
+            </>
+          ) : (
+            <button onClick={handleLogout} className="bg-white text-[#6B9C89] px-4 py-2 rounded font-medium hover:bg-[#6B9C89] hover:text-white text-sm">
+              Logout
+            </button>
+          )}
         </div>
       </div>
 
@@ -50,8 +78,14 @@ const Navbar = () => {
           <li><Link to="/cekkuota" className="block hover:text-gray-200">Cek Kuota</Link></li>
           <li><Link to="/berita" className="block hover:text-gray-200">Berita</Link></li>
           <li><Link to="/penginapan" className="block hover:text-gray-200">Penginapan</Link></li>
-          <li><Link to="/register" className="block bg-white text-[#6B9C89] px-4 py-2 rounded font-medium">Registrasi</Link></li>
-          <li><Link to="/login" className="block bg-white text-[#6B9C89] px-4 py-2 rounded font-medium">Login</Link></li>
+          {!isAuthenticated ? (
+            <>
+              <li><Link to="/register" className="block bg-white text-[#6B9C89] px-4 py-2 rounded font-medium">Registrasi</Link></li>
+              <li><Link to="/login" className="block bg-white text-[#6B9C89] px-4 py-2 rounded font-medium">Login</Link></li>
+            </>
+          ) : (
+            <li><button onClick={handleLogout} className="block bg-white text-[#6B9C89] px-4 py-2 rounded font-medium">Logout</button></li>
+          )}
         </ul>
       </div>
     </nav>

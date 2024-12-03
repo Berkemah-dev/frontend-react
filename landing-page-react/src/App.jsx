@@ -17,6 +17,8 @@ import KonfirmasiTiket from './components/pages/konfirmasi_tiket';
 import Panduan from './components/pages/panduan';
 import Penginapan from './components/pages/penginapan';
 import Admin from './components/pages/admin';
+import Kuotaadmin from './components/pages/kuotaadmin';
+import ApprovalAdmin from './components/pages/approvaladmin';
 const App = () => {
   return (
     <Router>
@@ -34,6 +36,10 @@ const App = () => {
         <Route path="/konfirmasitiket" element={<KonfirmasiTiket />} />
         <Route path="/panduan" element={<Panduan />} />
         <Route path="/admin" element={<Admin />} />
+        
+        <Route path="/approvaladmin" element={<ApprovalAdmin />} />
+
+        <Route path="/kuotaadmin" element={<Kuotaadmin/>} />
 
         <Route path="/penginapan" element={<Penginapan />} />
 
@@ -48,8 +54,9 @@ const Home = () => {
     <>
       <Navbar />
       <HeroSection />
-      <Destinations />
       <BookingGuide />
+      <Destinations />
+
     </>
   );
 };

@@ -17,9 +17,18 @@ const KonfirmasiTiket = () => {
   const handleFileChange = (e) => {
     const file = e.target.files[0];
     if (file) {
-      setQrisProof(file);
       setFileName(file.name); // Menyimpan nama file yang dipilih
+      convertFileToBase64(file);
     }
+  };
+
+  // Fungsi untuk mengonversi file menjadi base64
+  const convertFileToBase64 = (file) => {
+    const reader = new FileReader();
+    reader.onloadend = () => {
+      setQrisProof(reader.result); // Menyimpan file dalam format base64
+    };
+    reader.readAsDataURL(file);
   };
 
   const handleNextPage = async () => {
@@ -28,22 +37,29 @@ const KonfirmasiTiket = () => {
       return;
     }
 
-    const formData = new FormData();
-    formData.append("fullName", "John Doe");
-    formData.append("phoneNumber", "+6281234567890");
-    formData.append("numberOfTickets", 3);
-    formData.append("guideOption", false);
-    formData.append("paymentMethod", "Cash");
-    formData.append("qrisProof", qrisProof);
-    formData.append("kuotaId", "674d504957adfd3c830f060d");
+    // Menyiapkan data JSON
+    const data = {
+      fullName: "John Doe",
+      phoneNumber: "+6281234567890",
+      numberOfTickets: 3,
+      guideOption: false,
+      paymentMethod: "Cash",
+      qrisProof: qrisProof, // File sudah dalam format base64
+      kuotaId: "674d504957adfd3c830f060d"
+    };
+
+    console.log("Data yang akan dikirim:", data); // Log data untuk debugging
 
     try {
       setLoading(true);
       setError(null);
 
-      const response = await fetch("https://api.example.com/tickets", {
+      const response = await fetch("http://localhost:5000/api/bookinguser/book-ticket", {
         method: "POST",
-        body: formData,
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data), // Kirim data dalam format JSON
       });
 
       if (!response.ok) {

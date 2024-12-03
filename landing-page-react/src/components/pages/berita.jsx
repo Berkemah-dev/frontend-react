@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom'; // Import Link dari react-router-dom
 import logo from "../../assets/logo/logo.jpg"
+import Navbar from '../Navbar';
 
 function Berita() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -12,45 +13,7 @@ function Berita() {
   return (
     <div className="bg-gray-50">
       {/* Navbar */}
-      <nav className="bg-[#6B9C89] text-white px-6 py-4 shadow-md">
-        <div className="container mx-auto flex items-center justify-between">
-          {/* Logo and Menu Items Group */}
-          <div className="flex items-center space-x-4">
-            <img src={logo} alt="Logo" className="h-8" />
-
-            {/* Hamburger Menu */}
-            <button onClick={toggleMenu} className="block md:hidden text-white focus:outline-none">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24"
-                   stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
-                      d="M4 6h16M4 12h16m-7 6h7" />
-              </svg>
-            </button>
-
-            {/* Menu Items */}
-            <ul className={`hidden md:flex space-x-4 text-sm font-medium ${menuOpen ? 'block' : 'hidden'}`}>
-              <li><a href="/beranda" className="hover:text-gray-200 border-b-2 border-transparent hover:border-white">Beranda</a></li>
-              <li><a href="/destinasi" className="hover:text-gray-200 border-b-2 border-transparent hover:border-white">Destinasi Wisata</a></li>
-              <li><a href="/panduan" className="hover:text-gray-200 border-b-2 border-transparent hover:border-white">Panduan Booking</a></li>
-              <li><a href="/cekkuota" className="hover:text-gray-200 border-b-2 border-transparent hover:border-white">Cek Kuota</a></li>
-              <li><a href="/berita" className="hover:text-gray-200 border-b-2 border-transparent hover:border-white">Berita</a></li>
-              <li><a href="/penginapan" className="hover:text-gray-200 border-b-2 border-transparent hover:border-white">Penginapan</a></li>
-            </ul>
-          </div>
-        </div>
-
-        {/* Mobile Dropdown Menu */}
-        <div className={`md:hidden ${menuOpen ? 'block' : 'hidden'}`}>
-          <ul className="space-y-4 text-center py-4">
-            <li><a href="/index" className="block hover:text-gray-200">Beranda</a></li>
-            <li><a href="/destinasi" className="block hover:text-gray-200">Destinasi Wisata</a></li>
-            <li><a href="/panduan" className="block hover:text-gray-200">Panduan Booking</a></li>
-            <li><a href="/cekkuota" className="block hover:text-gray-200">Cek Kuota</a></li>
-            <li><a href="/berita" className="block hover:text-gray-200">Berita</a></li>
-            <li><a href="/penginapan" className="block hover:text-gray-200">Penginapan</a></li>
-          </ul>
-        </div>
-      </nav>
+      <Navbar/>
 
 {/* Main Content */}
 <section className="container mx-auto px-6 lg:px-12 py-8">

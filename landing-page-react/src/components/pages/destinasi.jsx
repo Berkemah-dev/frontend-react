@@ -7,6 +7,7 @@ import poto6 from "../../assets/poto/gurunteh.png"
 import poto7 from "../../assets/poto/goajepang.png"
 import icon1 from "../../assets/icon/iconqris.png"
 import icon2 from "../../assets/icon/icontunai.png"
+import Navbar from '../Navbar';
 
 const Destinasi = () => {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -39,36 +40,7 @@ const Destinasi = () => {
   return (
     <div className="bg-gray-50">
       {/* Navbar */}
-      <nav className="bg-[#6B9C89] text-white px-6 py-4 shadow-md">
-        <div className="container mx-auto flex items-center justify-between">
-          <div className="flex items-center space-x-4">
-            {/* Logo */}
-            <img src={logo} alt="Logo" className="h-8" />
-
-            {/* Hamburger Menu */}
-            <button
-              id="menu-btn"
-              className="block md:hidden text-white focus:outline-none"
-              onClick={toggleMenu}
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7" />
-              </svg>
-            </button>
-
-            {/* Menu Items */}
-            <ul className={`md:flex space-x-4 text-sm font-medium ${isMobileMenuOpen ? 'block' : 'hidden'}`}>
-              <li><a href="/beranda" className="hover:text-gray-200">Beranda</a></li>
-              <li><a href="/destinasi" className="hover:text-gray-200">Destinasi Wisata</a></li>
-              <li><a href="/panduan" className="hover:text-gray-200">Panduan Booking</a></li>
-              <li><a href="/cekkuota" className="hover:text-gray-200">Cek Kuota</a></li>
-              <li><a href="/berita" className="hover:text-gray-200">Berita</a></li>
-              <li><a href="/penginapan" className="hover:text-gray-200">Penginapan</a></li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-
+      <Navbar/>
       {/* Main Content */}
       <div className="container mx-auto px-4 pt-12">
         <div className="text-center mb-8">

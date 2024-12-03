@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
-import logo from "../../assets/logo/logo.jpg"
+import { useNavigate } from 'react-router-dom'; // Import useNavigate
+import logo from "../../assets/logo/logo.jpg";
 
 const Login = () => {
+  const navigate = useNavigate(); // Gunakan useNavigate untuk navigasi
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
@@ -27,11 +29,14 @@ const Login = () => {
         throw new Error(data.message || 'Login gagal!');
       }
 
+      // Simpan token dan data pengguna di localStorage
       localStorage.setItem('token', data.token);
-      if (data.role === 'admin') {
-        window.location.href = '/admin';
+      localStorage.setItem('user', JSON.stringify(data.user.role));
+      // Cek role pengguna dan arahkan ke halaman yang sesuai
+      if (data.user.role === 'admin') {
+        navigate('/admin'); // Arahkan ke halaman admin jika role admin
       } else {
-        window.location.href = '/';
+        navigate('/'); // Arahkan ke halaman utama untuk pengguna lain
       }
       alert('Login berhasil!');
     } catch (error) {
