@@ -48,6 +48,19 @@
             bukti transfer.
         </p>
 
+        <!-- Text Box besar untuk menerima data dari API -->
+        <div class="mt-4">
+            <label for="api-text" class="block text-gray-700 font-medium mb-2 text-left">Keterangan:</label>
+            <textarea id="api-text" rows="6" readonly
+                class="w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-2 focus:ring-blue-400 focus:outline-none"
+                placeholder="Data akan ditampilkan di sini..."></textarea>
+            <button onclick="fetchData()"
+                class="mt-2 w-full bg-blue-500 text-white py-3 px-6 rounded-full hover:bg-blue-600">
+                Muat Data
+            </button>
+        </div>
+
+        <!-- Tombol -->
         <div class="flex justify-between items-center space-x-4 mt-6">
             <!-- Tombol WhatsApp -->
             <a href="https://wa.me/628456789"
@@ -76,21 +89,27 @@
 
         <!-- Tombol Oke / Selanjutnya -->
         <div class="mt-4">
-            <button onclick="handleNextPage()"
+            <button type="submit"
                 class="flex items-center justify-center bg-green-500 text-white text-base font-medium py-3 px-6 rounded-full shadow-md hover:bg-green-600 focus:outline-none cursor-pointer w-full">
-                Selanjutnya
+                Confirm
             </button>
         </div>
-
     </div>
 
     <script>
-        function handleNextPage() {
-            // Redirect ke halaman berikutnya
-            // Ganti 'nextPage.html' dengan URL tujuan
-            window.location.href = 'konfir_tiket_berhasil.html';
+        // Fungsi untuk mengambil data dari API
+        function fetchData() {
+            fetch('https://api.example.com/data') // Ganti dengan URL API Anda
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('api-text').value = JSON.stringify(data, null, 2);
+                })
+                .catch(error => {
+                    document.getElementById('api-text').value = 'Gagal memuat data: ' + error;
+                });
         }
     </script>
+
 </body>
 
 </html>

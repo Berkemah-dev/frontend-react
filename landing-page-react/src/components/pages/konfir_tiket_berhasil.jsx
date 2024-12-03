@@ -1,11 +1,13 @@
 import React from 'react';
-import logo from "../../assets/logo/logo.jpg"
-import icon5 from "../../assets/icon/icon_ceklis.png"
-
+import { useNavigate } from 'react-router-dom'; // Import useNavigate
+import logo from "../../assets/logo/logo.jpg";
+import icon5 from "../../assets/icon/icon_ceklis.png";
 
 const KonfirTiketBerhasil = () => {
+  const navigate = useNavigate(); // Gunakan hook useNavigate
+
   const handleGoBack = () => {
-    window.history.back();
+    navigate('/destinasi'); // Navigasi ke halaman Destinasi
   };
 
   return (

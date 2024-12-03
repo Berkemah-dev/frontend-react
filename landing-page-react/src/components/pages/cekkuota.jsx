@@ -108,8 +108,43 @@ function CekKuota() {
       {/* Footer */}
       <footer className="bg-[#6B9C89] text-white py-8">
         <div className="container mx-auto flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0 md:items-start px-6">
+          {/* Logo Section */}
           <div className="flex flex-col items-center md:items-start">
             <img src={logo} alt="Logo" className="h-30 mb-4" />
+          </div>
+
+          {/* Links Section */}
+          <div className="flex flex-col md:flex-row md:space-x-16">
+            {/* Link Terkait */}
+            <div>
+              <h3 className="font-semibold text-lg mb-4 text-center md:text-left">Link Terkait</h3>
+              <ul className="space-y-2 text-sm">
+                <li><a href="destinasi.html" className="hover:underline">Destinasi Wisata</a></li>
+                <li><a href="panduan.html" className="hover:underline">Panduan Booking</a></li>
+                <li><a href="cekkuota.html" className="hover:underline">Cek Kuota</a></li>
+                <li><a href="berita.html" className="hover:underline">Berita</a></li>
+                <li><a href="penginapan.html" className="hover:underline">Penginapan</a></li>
+              </ul>
+            </div>
+
+            {/* Informasi Section */}
+            <div>
+              <h3 className="font-semibold text-lg mb-4 text-center md:text-left">Informasi</h3>
+              <ul className="space-y-2 text-sm">
+                <li className="flex items-center justify-center md:justify-start">
+                  <svg className="h-5 w-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 10l7-7m0 0l7 7M10 3v16"></path>
+                  </svg>
+                  <span>Jl. Pandansari, Kaligua, Pandansari, Brebes, Jawa Tengah 52276</span>
+                </li>
+                <li className="flex items-center justify-center md:justify-start">
+                  <svg className="h-5 w-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 12H9m4 8H9a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v6"></path>
+                  </svg>
+                  <span>0854-4567-6871</span>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
 
