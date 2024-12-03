@@ -5,6 +5,7 @@ import poto1 from "../../assets/poto/Group 1.png";
 import poto2 from "../../assets/poto/Group 5.png"
 import poto3 from "../../assets/poto/kaligua.png"
 import poto4 from '../../assets/poto/panduan.png'
+import poto18 from '../../assets/poto/goajepang.png'
 import Navbar from '../Navbar';
 
 const Beranda = () => {
@@ -50,7 +51,11 @@ const Beranda = () => {
               </div>
               <div className="flex-shrink-0 w-[400px] h-[250px] relative rounded-lg overflow-hidden snap-start">
                 <img src={poto3} alt="Kolam Renang" className="w-full h-full object-cover" />
-                <div className="absolute bottom-0 left-0 bg-black bg-opacity-10 w-full text-white py-3 pl-3 text-lg">Kolam Renang</div>
+                <div className="absolute bottom-0 left-0 bg-black bg-opacity-10 w-full text-white py-3 pl-3 text-lg">Kaligua</div>
+              </div>
+              <div className="flex-shrink-0 w-[400px] h-[250px] relative rounded-lg overflow-hidden snap-start">
+                <img src={poto18} alt="Kolam Renang" className="w-full h-full object-cover" />
+                <div className="absolute bottom-0 left-0 bg-black bg-opacity-10 w-full text-white py-3 pl-3 text-lg">Kaligua</div>
               </div>
             </div>
           </div>
@@ -66,7 +71,9 @@ const Beranda = () => {
           <div>
             <h2 className="text-2xl font-semibold text-gray-800 mb-4">Panduan Booking</h2>
             <p className="text-gray-600 mb-6">Lihat tata cara untuk booking selengkapnya</p>
-            <a href="#" className="bg-[#6B9C89] text-white px-6 py-2 rounded font-medium hover:bg-green-700">Lihat Panduan</a>
+            <Link to="/panduan" className="bg-[#6B9C89] text-white px-6 py-2 rounded font-medium hover:bg-green-700">
+              Lihat Panduan
+            </Link>
           </div>
         </div>
       </section>

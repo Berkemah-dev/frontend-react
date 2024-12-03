@@ -34,7 +34,7 @@ const Navbar = () => {
       <div className="container mx-auto flex items-center justify-between">
         {/* Logo and Menu Items Group */}
         <div className="flex items-center space-x-4">
-          <img src={logo} alt="Logo" className="h-8" />
+          <img src={logo} alt="Logo" className="h-[60px]" />
           
           {/* Hamburger Menu */}
           <button onClick={toggleDropdown} className="block md:hidden text-white focus:outline-none">
@@ -44,8 +44,8 @@ const Navbar = () => {
           </button>
 
           {/* Menu Items */}
-          <ul className={`md:flex space-x-4 text-sm font-medium ${dropdown ? "block" : "hidden"}`} id="menu">
-            <li><Link to="/" className="hover:text-gray-200 border-b-2 border-transparent hover:border-white">Beranda</Link></li>
+          <ul className={`md:flex space-x-4 text-sm font-medium ${dropdown ? "block" : "hidden"} md:block`} id="menu">
+            <li><Link to="/beranda" className="hover:text-gray-200 border-b-2 border-transparent hover:border-white">Beranda</Link></li>
             <li><Link to="/destinasi" className="hover:text-gray-200 border-b-2 border-transparent hover:border-white">Destinasi Wisata</Link></li>
             <li><Link to="/panduan" className="hover:text-gray-200 border-b-2 border-transparent hover:border-white">Panduan Booking</Link></li>
             <li><Link to="/cekkuota" className="hover:text-gray-200 border-b-2 border-transparent hover:border-white">Cek Kuota</Link></li>
@@ -72,7 +72,7 @@ const Navbar = () => {
       {/* Mobile Dropdown Menu */}
       <div className={`md:hidden ${dropdown ? "block" : "hidden"}`} id="dropdown">
         <ul className="space-y-4 text-center py-4">
-          <li><Link to="/" className="block hover:text-gray-200">Beranda</Link></li>
+          <li><Link to="/beranda" className="block hover:text-gray-200">Beranda</Link></li>
           <li><Link to="/destinasi" className="block hover:text-gray-200">Destinasi Wisata</Link></li>
           <li><Link to="/panduan" className="block hover:text-gray-200">Panduan Booking</Link></li>
           <li><Link to="/cekkuota" className="block hover:text-gray-200">Cek Kuota</Link></li>
